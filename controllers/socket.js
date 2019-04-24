@@ -42,7 +42,7 @@ setTimeout(function() {
 	  		data_update = {$set : {'xrp_change': parseFloat(response.priceChange)}};
 	  	if (response.symbol == 'EOSUSDT')
 	  		data_update = {$set : {'eos_change': parseFloat(response.priceChange)}};
-	  	if (response.symbol == 'USDTTUSD')
+	  	if (response.symbol == 'TUSDUSDT')
 	  		data_update = {$set : {'usdt_change': parseFloat(response.priceChange)}};
 	  	Ticker.update({},data_update,(err,responses)=>{
 		})
@@ -62,7 +62,7 @@ setTimeout(function() {
 	  		data_update = {$set : {'xrp_usd': parseFloat(trades.p)}};
 	  	if (trades.s == 'EOSUSDT')
 	  		data_update = {$set : {'eos_usd': parseFloat(trades.p)}};
-	  	if (trades.s == 'USDTTUSD')
+	  	if (trades.s == 'TUSDUSDT')
 	  		data_update = {$set : {'usdt_usd': parseFloat(trades.p)}};
 
 	  	Ticker.update({},data_update,(err,responses)=>{
