@@ -1,0 +1,312 @@
+<div class="content">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="main-wallet">
+               <div class="content">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <div class="">
+                           <p>Total Investment</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-footer">
+                  
+                  <span class="">{{user.total_invest}}  </span> USD
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="main-wallet">
+               <div class="content">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <div class="">
+                           <p>Active Investment</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-footer">
+                  
+                  <span class=""> {{user.active_invest}} </span> USD 
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="main-wallet">
+               <div class="content">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <div class="">
+                           <p>Total Earned</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-footer">
+                  
+                  <span class=""> {{user.total_earn}} </span> USD 
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="main-wallet">
+               <div class="content">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <div class="">
+                           <p>Total Capital Return</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-footer">
+                  
+                  <span class=""> 0 </span> USD 
+               </div>
+            </div>
+         </div>
+      </div>
+       <div class="row">
+          
+         <div class="card" style="margin:0px 10px; margin-bottom:15px">
+           <div class="content">
+              <div class="row">
+        
+    <div class="col-md-6 col-md-push-3">
+      <div class="clearfix"></div>
+      <form method="post" accept-charset="utf-8" action="/account/lending/submit-lending" id="frmLending" class="send-coin-form" autocomplete="off" novalidate="novalidate" style="margin-bottom: 40px;">
+            
+               <div class="row" >
+                 <h5 class="text-center">Lending Program</h5> 
+                  <div class="form-group col-md-12" style="margin-top: 20px; margin-bottom: 0px;">
+
+                    <p style="font-size: 14px; padding: 10px; border: 1px solid #e0e0e0;">Balance: {{satoshi user.balance.coin_wallet.available}} BBL</p>
+                    <p style="font-size: 14px; padding: 10px; border: 1px solid #e0e0e0;">Price: {{data_ticker.bbl_usd}} USD/BBL</p>
+                     
+                  </div>
+
+                  <div class="form-group col-md-6">
+                     <label>Amount USD</label>
+                     <div class="input-group" >
+                        <input type="text" id="amount_usd" class="form-control input-flyp " name="amount_usd" placeholder="USD" required="" autocomplete="off">
+                        <div class="input-group-addon ng-binding">USD</div>
+                     </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                     <label>Estimated Value</label>
+                     <div class="input-group">
+                        <div class="input-group-addon addon-aprox invoiced ">~</div>
+                        <input readonly="true" type="text" id="amount_bbl" class="form-control input-flyp" name="amount_bbl" placeholder="BBL" required="" autocomplete="off">
+                        <div class="input-group-addon unit_payment">BBL</div>
+
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="text-center" id="capatcha">
+                  <div style="transform:scale(0.77); transform-origin:0 0;" class="g-recaptcha" data-theme="light" data-sitekey="6LfTIDYUAAAAAIscAJ-qcY2EkCCZLfGK3O6FPnSj"></div>
+               </div>
+               <div class="alert alert alert-danger alert-dismissable" style="display: none;"><a class="close" data-dismiss="alert">×</a><span class="message"></span></div>
+            
+            <div class="text-center">
+              <button  class="btn btn-social btn-fill btn-twitter" data-toggle="modal" data-target="#ModalInvest"><i class="fa fa-handshake-o"></i> Infomation</button>
+              <button type="submit" class="btn btn-social btn-fill btn-twitter frmWihtdrawBTC_Submit" data-type="coin"><i class="fa fa-check" aria-hidden="true"></i> Confirm</button>
+            </div>
+         </form>
+    </div>
+  </div>
+
+
+           </div>
+         </div>
+                  
+            
+         
+      </div>
+      <div class="row" >
+         <div class="content" style="margin:0px 10px">
+            
+         
+      </div>
+
+      <div class="content" style="margin:0px 10px">
+            
+         </div>
+      
+      <div class="row" style="margin-bottom:15px;">
+         <div class="col-md-12">
+            <div class="card" style="margin:0px 10px;">
+               <div class="content" id="your_investment">
+                  <div class="fakeloader"></div>
+                  <h3 class="text-center">Your Lending</h3>
+                  <table id="list-yourinvest" class="table table-bordered table-hover" border="1" cellpadding="0" cellspacing="0"  style="border-collapse:collapse;" >
+                     <thead>
+                        <tr>
+                           <th class="text-center">Date</th>
+                           <th class="text-center">Expire</th>
+                           <th class="text-center">Amount Invest</th>
+                           <th class="text-center">Interest</th>
+                        </tr>
+                     </thead>
+                     <tbody> 
+                     <tr>
+                       <td colspan="4" class="text-center">No data available in table</td>
+                     </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- end content--> 
+            </div>
+            <!--  end card  --> 
+         </div>
+      </div>
+
+
+      <div class="row" style="margin-bottom: 50px;">
+         <div class="col-md-12">
+            <div class="card">
+               <div class="content" id="">
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Daily Profit</a></li>
+                    <li><a data-toggle="tab" href="#menu11">Referral Bonus</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Capital Return</a></li>
+                     <li><a data-toggle="tab" href="#menu1">Bitbeeline Wallet</a></li>
+                  </ul>
+
+                  <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                      <h3 class="text-center" style="margin-bottom: 20px;">Daily Profit</h3>
+                      <table id="login_history" class="table table-bordered table-hover" border="1" cellpadding="0" cellspacing="0"  style="border-collapse:collapse;">
+                       <thead>
+                          <tr>
+                             <th class="text-center">Date</th>
+                             <th class="text-center">Type</th>
+                             <th class="text-center">Amount</th>
+                             <th class="text-center">Detail</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                          {{#each user.balance.lending_wallet.history}} 
+                            {{#if_eq this.type 'daily_profit'}}
+                              <tr>
+                                 <td>{{prettifyDate this.date}} </td>
+                                 <td>
+                                  <span class="label label-success">Daily Profit</span>
+                                  
+                                 </td>
+                                 <td>{{this.amount}} BBL</td>
+                                 <td>{{this.detail}}</td>
+                              </tr>
+                            {{/if_eq}}
+                          {{/each}} 
+                       </tbody>
+                    </table>
+                    </div>
+
+                    <div id="menu11" class="tab-pane fade">
+                      <h3 class="text-center" style="margin-bottom: 20px;">Referral Bonus</h3>
+                      <table id="login_history1" class="table table-bordered table-hover" border="1" cellpadding="0" cellspacing="0"  style="border-collapse:collapse;">
+                       <thead>
+                          <tr>
+                             <th class="text-center">Date</th>
+                             <th class="text-center" class="table-address">Type</th>
+                             <th class="text-center">Amount</th>
+                             <th class="text-center">Detail</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                          {{#each user.balance.lending_wallet.history}} 
+                            {{#if_eq this.type 'referral'}}
+                              <tr>
+                                 <td >{{prettifyDate this.date}} </td>
+                                 <td>
+                                  <span class="label label-success">Referral Bonus</span>
+                                  
+                                 </td>
+                                 <td>{{this.amount}} BBL</td>
+                                 <td>{{this.detail}}</td>
+                              </tr>
+                            {{/if_eq}}
+                          {{/each}} 
+                       </tbody>
+                    </table>
+                    </div>
+
+                    
+                    <div id="menu2" class="tab-pane fade">
+                      <h3 class="text-center" style="margin-bottom: 20px;">Capital Return</h3>
+                      <table id="login_history3" class="table table-bordered table-hover" border="1" cellpadding="0" cellspacing="0"  style="border-collapse:collapse;">
+                       <thead>
+                          <tr>
+                             <th class="text-center">Date</th>
+                             <th class="text-center">Type</th>
+                             <th class="text-center">Amount</th>
+                             <th class="text-center">Detail</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                          <tr>
+                            <td class="text-center" colspan="4">No data available in table</td>
+                          </tr>
+                       </tbody>
+                    </table>
+                    </div>
+
+
+                    <div id="menu1" class="tab-pane fade">
+                      <h3 class="text-center" style="margin-bottom: 20px;">Bitbeeline Wallet</h3>
+                      <table id="login_history2" class="table table-bordered table-hover" border="1" cellpadding="0" cellspacing="0"  style="border-collapse:collapse;">
+                       <thead>
+                          <tr>
+                             <th class="text-center">Date</th>
+                             <th class="text-center">Type</th>
+                             <th class="text-center">Amount</th>
+                             <th class="text-center">Detail</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                          {{#each user.balance.coin_wallet.history}} 
+                            
+                               {{#if_eq this.type 'transfer'}}
+                              <tr>
+                                 <td>{{prettifyDate this.date}} </td>
+                                 <td>
+                                 {{#if_eq this.type 'lending'}}
+                                  <span class="label label-success">Lending</span>
+                                  {{/if_eq}}
+                                  {{#if_eq this.type 'transfer'}}
+                                  <span class="label label-info">Transfer</span>
+                                  {{/if_eq}}
+                                 </td>
+                                 <td>{{this.amount}} BBL</td>
+                                 <td>{{this.detail}}</td>
+                              </tr>
+                              
+                           {{/if_eq}}
+                          {{/each}} 
+                       </tbody>
+                    </table>
+                    </div>
+
+                  </div>
+                 
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+
+<style type="text/css">
+  .no-transaction{
+    width: 100%;
+    top: 84px;
+  }
+</style>

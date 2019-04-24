@@ -1,0 +1,774 @@
+@import (optional,reference) "../../../skins/default/style/var.less";
+
+.mod_content{
+    padding-top: 30px;
+}
+#vnt-main{
+    width: -webkit-calc(~'100% - 400px');
+    width: -moz-calc(~'100% - 400px');
+    width: calc(~'100% - 400px');
+    float: left;
+    padding: 0 15px;
+}
+#vnt-sidebar{
+    width: 400px;
+    float: right;
+    padding: 0 15px;
+}
+
+.style_box{
+    margin-bottom: 30px;
+}
+.style_box .sb_title{
+    font-size: 25px;
+    line-height: 35px;
+    text-transform: uppercase;
+    background: @bg_title_box;
+    color: @color_title_box;
+    border-bottom: 2px solid @border_title_box;
+    padding: 5px 15px;
+}
+.style_box .sb_title.before{
+    position: relative;
+    padding-right: 50px;
+}
+.style_box .sb_title.before:before{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    font-family: FontAwesome;
+    text-align: center;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+.style_box .sb_title h2{
+    font-weight: normal;
+    font-size: inherit;
+    line-height: inherit;
+}
+.style_box .sb_content{
+    border: 1px solid @bg_title_box;
+    border-top: none;
+}
+.style_coin{
+    padding-top: 15px;
+    border-bottom: 4px solid @bg_coin;
+}
+.style_coin span{
+    display: inline-block;
+    margin: 0 5px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 0 10px;
+    background: @bg_coin;
+    color: @c_coin;
+}
+table.table_makets{
+    width: 100%;
+}
+table.table_makets td{
+    font-size: 13px;
+    line-height: 20px;
+    padding: 2px 4px;
+    border-bottom: 1px solid @border_table;
+}
+table.table_makets thead td{
+    background: @bg_title_box;
+    color: @color_title_box;
+    border-right: 1px solid @border_title_box;
+}
+table.table_makets thead #sort_volume{
+    cursor: pointer;
+}
+table.table_makets thead #sort_volume:after{
+    font-family: FontAwesome;
+    content: '\f0d7';
+    padding-left: 5px;
+}
+table.table_makets thead #sort_volume.ascending:after{
+    content: '\f0d8';
+}
+table.table_makets thead td:last-child{
+    border-right: 0;
+}
+table.table_makets tbody tr:nth-child(2n) td{
+    background: @bg_line_table;
+}
+table.table_makets tbody tr{
+    cursor: pointer;
+}
+table.table_makets tbody tr:hover td{
+    background: @bg_line_table_hover;
+    border-top: 1px double @border_table_hover;
+    border-bottom: 1px solid @border_table_hover;
+}
+table.table_makets tbody tr:hover td:first-child{
+    background: @border_table_hover;
+}
+table.table_makets tbody tr.active:hover td,
+table.table_makets tbody tr.active td{
+    background: @bg_line_table_active;
+    border-top: 1px double @border_table_active;
+    border-bottom: 1px solid @border_table_active;
+}
+table.table_makets tbody tr.active:hover td:first-child,
+table.table_makets tbody tr.active td:first-child{
+    background: @border_table_active;
+}
+table.table_makets .text_right{
+    text-align: right;
+}
+.list_note .item{
+    padding: 10px 15px;
+    border-bottom: 1px solid @bg_title_box;
+}
+.list_note .item .i-content{
+    font-size: 14px;
+    line-height: 20px;
+}
+.list_note .item .i-date{
+    font-size: 13px;
+    line-height: 20px;
+    color: @bg_header_hover;
+}
+.box_exchange .exchange_title .e_title_left{
+    float: left;
+    margin-bottom: 20px;
+}
+.box_exchange .exchange_title .e_title_right{
+    float: right;
+    width: 450px;
+    margin-bottom: 20px;
+}
+.hilights{
+    border-left: 1px solid rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+.hilights .row_table{
+    width: 100%;
+    display: table;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.hilights .row_table > div{
+    display: table-cell;
+    padding: 5px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 20px;
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+.hilights .row_table .info{
+    font-weight: bold;
+}
+.hilights .row_table .volume .name,
+.hilights .row_table .inlne_block{
+    display: inline-block;
+}
+.hilights .row_table .volume .name_coin,
+.hilights .row_table .volume .info{
+    display: inline;
+}
+.exchange_title .wrapper_title{
+    position: relative;
+    padding-left: 20px;
+}
+.exchange_title .wrapper_title:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 5px;
+    background: @bg_header;
+}
+.exchange_title .wrapper_title h1{
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.exchange_title .wrapper_title .title_coin{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: @bg_header;
+}
+#load_chart{
+    position: relative;
+    min-height: 450px;
+    margin-bottom: 30px;
+}
+#tab_market{
+    display: none;
+    border-bottom: 3px solid @bg_header;
+}
+#tab_market ul:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+#tab_market ul li{
+    float: left;
+    margin-right: 2px;
+}
+#tab_market ul li a{
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 15px;
+    background: #999999;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#tab_market ul li a.current,
+#tab_market ul li a:hover{
+    background: @bg_header;
+    color: @color_header;
+}
+#markets_coin .row{
+    margin: 0 -5px;
+}
+#markets_coin .row *[class^=col-]{
+    padding: 0 5px;
+}
+#markets_coin .item{
+    border: 1px solid rgba(31, 140, 230, 0.3);
+    margin-bottom: 20px;
+}
+#markets_coin .item .item_head{
+    padding: 10px;
+    background: rgba(31, 140, 230, 0.08);
+    border-bottom: 2px solid #52a058;
+}
+#markets_coin .item.stop_limit .item_head{
+    border-bottom: 2px solid #e39706;
+}
+#markets_coin .item.sell_coin .item_head{
+    border-bottom: 2px solid #ac251a;
+}
+#markets_coin .item .item_head .i-title{
+    margin-bottom: 5px;
+}
+#markets_coin .item .item_head .i-title .i-title-left{
+    float: left;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+#markets_coin .item .item_head .i-title .i-title-left h2{
+    font-weight: normal;
+    font-size: inherit;
+    line-height: inherit;
+}
+#markets_coin .item .item_head .i-title .i-title-right{
+    float: right;
+}
+#markets_coin .item .item_head .i-title .i-title-right a{
+    text-decoration: underline;
+    font-size: 12px;
+    line-height: 20px;
+}
+#markets_coin .item .item_head .i-info .i-info-left{
+    float: left;
+    width: 100px;
+}
+#markets_coin .item .item_head .i-info .i-info-right{
+    padding-left: 100px;
+}
+#markets_coin .item .item_head .i-info .border_num{
+    cursor: pointer;
+    border-bottom: 1px dotted @corlor_site;
+}
+#markets_coin .item .item_content{
+    padding: 15px 20px 5px;
+    background: -moz-linear-gradient(top,rgba(31, 140, 230,0.15) 0,rgba(31, 140, 230,0) 45%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(31, 140, 230,0.15)),color-stop(45%,rgba(31, 140, 230,0)));
+    background: -webkit-linear-gradient(top,rgba(31, 140, 230,0.15) 0,rgba(31, 140, 230,0) 45%);
+    background: -ms-linear-gradient(top,rgba(31, 140, 230,0.15) 0,rgba(31, 140, 230,0) 45%);
+    background: linear-gradient(to bottom,rgba(31, 140, 230,0.15) 0,rgba(31, 140, 230,0) 45%);
+}
+.form-coin .row_input{
+    margin-bottom: 7px;
+}
+.form-coin .row_input .fl{
+    min-height: 34px;
+}
+.form-coin .row_input .row_left{
+    width: 85px;
+    float: left;
+}
+.form-coin .row_input .row_right{
+    padding-left: 85px;
+}
+.form-coin .row_input .w_input{
+    position: relative;
+}
+.form-coin .row_input .w_input .form-control{
+    padding-right: 45px;
+    text-align: right;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: 0;
+    border: 1px solid rgba(31, 140, 230, 0.6);
+}
+.form-coin .row_input .w_input .primaryCurrency{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    background: rgba(31, 140, 230, 0.6);
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+    text-align: center;
+    padding-top: 5px;
+}
+.form-coin .row_input .takerFee{
+    text-decoration: underline;
+}
+.form-coin .row_input .form-button{
+    text-align: right;
+}
+.form-coin .row_input .form-button button.btn{
+    margin-left: 5px;
+    border: 0;
+    outline: 0 !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background: @bg_button;
+    color: @corlor_button;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.form-coin .row_input .form-button button.btn:hover{
+    background: @bg_button_hover;
+    color: @corlor_button_hover;
+}
+.form-coin .row_input .form-button button.btn span{
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+.form-coin .line_hr{
+    margin-bottom: 10px;
+    border-bottom: 1px dotted rgba(31, 140, 230, 0.6);
+}
+#order_buy_sell .item{
+    margin-bottom: 30px;
+}
+#order_buy_sell .item .i-title{
+    margin-bottom: 10px;
+}
+#order_buy_sell .item .i-title .i-title-left{
+    float: left;
+    font-size: 25px;
+    line-height: 35px;
+    text-transform: uppercase;
+}
+#order_buy_sell .item .i-title .i-title-left h3{
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: normal;
+}
+#order_buy_sell .item .i-title .i-title-right{
+    float: right;
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 8px;
+}
+.order_table_title{
+    border-left: 1px solid @border_title_box;
+    border-right: 1px solid @border_title_box;
+}
+.order_table_content{
+    border-left: 1px solid @border_title_box;
+    border-right: 1px solid @border_title_box;
+    border-bottom: 1px solid @border_title_box;
+}
+.order_table_title table,
+.order_table_content table{
+    width: 100%;
+}
+.order_table_content table tr{
+    cursor: pointer;
+}
+.order_table_title table td,
+.order_table_content table td{
+    width: 25%;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 5px 10px;
+}
+.order_table_title table td{
+    text-align: center;
+    background: @bg_title_box;
+    color: @color_title_box;
+    border: 1px solid @border_title_box;
+}
+.order_table_title table td:first-child{
+    border-left: 0;
+}
+.order_table_title table td:last-child{
+    border-right: 0;
+}
+.order_table_content table td{
+    text-align: right;
+    border: 1px solid @border_table;
+    border-top: 0;
+}
+.order_table_content table td:first-child{
+    border-left: 0;
+}
+.order_table_content table td:last-child{
+    border-right: 0;
+}
+.order_table_content table tr:nth-child(2n) td{
+    background: @bg_line_table;
+}
+.order_table_content table tr:hover td{
+    background: @bg_line_table_hover;
+}
+.order_table_content{
+    height: 217px;
+    overflow: hidden;
+}
+.order_table_content .load_more_table{
+    text-align: right;
+    padding: 10px 15px 10px 10px;
+}
+.order_table_content .load_more_table a{
+    display: inline-block;
+    font-weight: bold;
+}
+.order_table_content .load_more_table a:after{
+    font-family: FontAwesome;
+    content: '\f175';
+    padding-left: 10px;
+    font-weight: normal;
+}
+.style-scroll{
+    position: relative;
+    height: 100%;
+}
+.style-scroll .mCSB_outside+.mCSB_scrollTools{
+    right: 0;
+}
+.style-scroll .mCSB_scrollTools{
+    width: 8px;
+}
+.style-scroll .mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.style-scroll .mCS-light-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+    width: 4px;
+    background-color: @border_title_box;
+    opacity: 1;
+}
+.style-scroll .mCS-light-thick.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
+.style-scroll .mCS-light-thick.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.style-scroll .mCS-light-thick.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
+    opacity: 1;
+    background-color: @border_title_box;
+}
+#depthChartContainer{
+    width: 100%;
+    max-height: 1000px;
+    border: 1px solid @border_title_box;
+    overflow: hidden;
+    box-sizing: border-box;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    margin-bottom: 30px;
+}
+#depthChartDot {
+    display: none;
+    position: absolute;
+    z-index: 19;
+    color: #43575e;
+    font-size: 12px;
+    pointer-events: none;
+}
+#depthChartYline {
+    width: 1px;
+    height: 188px;
+    display: none;
+    position: absolute;
+    z-index: 18;
+    background-color: #91abac;
+    pointer-events: none;
+}
+#depthChartInfo {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    border: 1px solid #91abac;
+    padding: 3px 6px;
+    background-color: #ffffff;
+    font-size: 10px;
+    line-height: 13px;
+    pointer-events: none;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-clip: padding-box;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.chartInfoDiv .row_chart{
+    display: table-row;
+}
+.chartInfoDiv div.row_chart div{
+    display: table-cell;
+    font-weight: bold;
+    border-bottom: 1px solid #e8eeee;
+}
+.chartInfoDiv div.row_chart:last-child div{
+    border-bottom: 0;
+}
+.chartInfoDiv div.row_chart div:last-child{
+    text-align: right;
+    padding-left: 4px;
+}
+.show_hide{
+    position: relative;
+}
+.show_hide .icon-sh{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+.show_hide .icon-sh a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.show_hide .icon-sh a:after{
+    font-family: FontAwesome;
+    font-size: 30px;
+    line-height: 30px;
+    content: '\f01b';
+}
+.show_hide.acitve-hidden .icon-sh a:after{
+    content: '\f01a';
+}
+#tab_trade_title{
+    display: none;
+    border-bottom: 3px solid @bg_header;
+}
+#tab_trade_title ul:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+#tab_trade_title ul li{
+    float: left;
+    margin-right: 2px;
+}
+#tab_trade_title ul li a{
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 15px;
+    background: #999999;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#tab_trade_title ul li a.current,
+#tab_trade_title ul li a:hover{
+    background: @bg_header;
+    color: @color_header;
+}
+@media screen and (max-width: 1024px){
+    #vnt-sidebar{
+        float: none;
+        width: 100%;
+    }
+    #vnt-main{
+        float: none;
+        width: 100%;
+    }
+    .no_show_mobile{
+        display: none !important;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1024px){
+    #markets_coin .row *[class^=col-]{
+        width: 33.33333%;
+    }
+}
+@media screen and (max-width: 991px){
+    .box_exchange .exchange_title .e_title_left{
+        float: none;
+    }
+    .box_exchange .exchange_title .e_title_right{
+        float: none;
+        width: 100%;
+    }
+    #tab_market{
+        display: block;
+    }
+    #tab_trade_title{
+        display: block;
+    }
+    #markets_coin *[class^=col-]{
+        min-height: 0;
+    }
+    #markets_coin .item{
+        position: absolute;
+        top: 0;
+        left: 15px;
+        right: 15px;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: opacity 0.5s ease;
+        -moz-transition: opacity 0.5s ease;
+        -o-transition: opacity 0.5s ease;
+        transition: opacity 0.5s ease;
+    }
+    #markets_coin .item.current{
+        position: relative;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+    .show_hide .icon-sh{
+        display: block;
+    }
+    #markets_coin{
+        margin-bottom: 30px;
+    }
+    #markets_coin .item{
+        margin-bottom: 0;
+    }
+    .style_box_table.show_hide .sbt_title,
+    #order_buy_sell .item.show_hide .i-title{
+        padding-bottom: 5px;
+        border-bottom: 3px solid @bg_header;
+        padding-right: 40px;
+    }
+    #tab_trade_content{
+        position: relative;
+    }
+    #tab_trade_content .style_box_table .sbt_title{
+        display: none;
+    }
+    #tab_trade_content .style_box_table{
+        position: absolute;
+        top: 0;
+        left: 15px;
+        right: 15px;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: opacity 0.5s ease;
+        -moz-transition: opacity 0.5s ease;
+        -o-transition: opacity 0.5s ease;
+        transition: opacity 0.5s ease;
+    }
+    #tab_trade_content .style_box_table.current{
+        position: relative;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@media screen and (max-width: 767px){
+    .stx-toolbar .stx-btn.stx-menu-btn.drawBtn{
+        display: none;
+    }
+    .stx-wrapper .stx-toolbar{
+        margin-right: 0;
+    }
+    .stx-wrapper .stx-toolbar ul.hu{
+        margin-right: 0;
+        float: left;
+    }
+    .order_table_content{
+        height: 155px;
+    }
+}
+@media screen and (max-width: 479px){
+    .hilights .row_table > div{
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .hilights .row_table > div:last-child{
+        border-bottom: 0;
+    }
+    .hilights .row_table .name,
+    .hilights .row_table .info{
+        display: inline-block;
+    }
+    .hilights .row_table .volume .info{
+        display: inline;
+    }
+    .stx-nav .stx-menus{
+        display: none !important;
+    }
+    .order_table_title table td,
+    .order_table_content table td{
+        width: 33.333333%;
+    }
+    .order_table_title table td.total,
+    .order_table_content table td.total{
+        display: none;
+    }
+    #order_buy_sell .item .i-title .i-title-left{
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: bold;
+    }
+    #order_buy_sell .item .i-title .i-title-left h3{
+        font-weight: bold;
+    }
+    .style_box_table.show_hide .sbt_title{
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+    .style_box_table.show_hide .sbt_title h3{
+        font-weight: bold;
+    }
+    #order_buy_sell .item.show_hide .i-title{
+        padding-bottom: 10px;
+    }
+    #order_buy_sell .item .i-title .i-title-right{
+        font-size: 13px;
+        line-height: 20px;
+        padding-top: 3px;
+    }
+}
+@media screen and (max-width: 414px){
+    table.table_makets td:last-child{
+        display: none;
+    }
+    table.table_makets td {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}

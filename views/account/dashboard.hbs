@@ -1,0 +1,365 @@
+<div class="content">
+   <div class="container-fluid">
+  
+   <div class="row ">
+         <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="">
+               <div class="content">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <div class="">
+                           <p>Referral link:</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-footer" style="margin-bottom: 50px;">
+                  <div class="input-group">
+                     <span class="input-group-btn">
+                        <button class="btn btn-social btn-fill btn-twitter copy" data-clipboard-action="copy" data-clipboard-target="#link" type="button">
+                           <div class="icon dripicons-copy"></div>
+                           Copy 
+                        </button>
+                     </span>
+                     <input style="background: #fff" id="link" readonly="" type="text" value="" class="form-control refferal_link"> 
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-6 col-xs-12 solid-plu">
+            Share referral With: 
+            <br/>
+            <a style="margin-left:0px;" href="https://www.facebook.com/sharer/sharer.php?u=link&amp;title=Bitbeeline Community-Earn, Buy, Sell and Trade | Bitbeeline" target="_blank">
+               <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=link&amp;title=Bitbeeline" target="_blank">
+               <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://plus.google.com/up/accounts/upgrade/?continue=link&amp;title=Bitbeeline" target="_blank">
+               <i class="fa fa-google-plus"></i>
+            </a>
+            <a href="https://www.reddit.com/submit?url=https://link&amp;title=Bitbeeline" target="_blank">
+               <i class="fa fa-reddit"></i>
+            </a>
+         </div>
+         
+      </div>
+
+         <div class="row row-dashboard-account">
+            <div class="col-md-6">
+               <div class="card">
+                  <h4>Account Balances</h4>  
+               <div class="content" style="margin:0px; padding:0px 10px">
+                  
+                  <div class="table-responsive" style="margin-top:10px; margin-bottom:10px; background:#fff; padding:5px;">
+                    <table class="table table-market-trade" style="margin-bottom:0px;">
+                        <tbody>
+                            <tr>
+                                <td class="td-market-trade">
+                                    Bitbeeline (BBL)
+                                </td>
+                                <td class="text-right td-market-trade">
+                                    <span >{{satoshi user.balance.coin_wallet.available}}</span>
+                                </td>
+                               
+                            </tr>
+                            <tr>
+                                <td>Bitcoin (BTC)</td>
+                                <td class="text-right">
+                                    <span >{{satoshi user.balance.bitcoin_wallet.available}}</span>
+                                 </td>
+                            </tr>
+                            <tr>
+                                <td>Bitcoin Cash (BCH)</td>
+                                <td class="text-right">
+                                    <span >{{satoshi user.balance.bitcoincash_wallet.available}}</span>
+                                </td>
+          
+                            </tr>
+                            <tr>
+                                <td>Bitcoin Gold (BTG)</td>
+                                <td class="text-right">
+                                    <span >{{satoshi user.balance.bitcoingold_wallet.available}}</span>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td>Dash (DASH)</td>
+                                <td class="text-right">
+                                    <span >{{satoshi user.balance.dashcoin_wallet.available}}</span>
+                                </td>
+          
+                           </tr>
+
+                           <tr>
+                                <td>Litecoin (LTC)</td>
+                                <td class="text-right">
+                                    <span >{{satoshi user.balance.litecoin_wallet.available}}</span>
+                                </td>
+                           </tr>
+
+                           <tr>
+                                <td>Bitconnect (BCC)</td>
+                                <td class="text-right">
+                                    <span >{{satoshi user.balance.bitconnect_wallet.available}}</span>
+                                </td>
+                           </tr>
+
+                           <tr>
+                                <td>Verge (XVG)</td>
+                                <td class="text-right">
+                                    <span >{{satoshi user.balance.verge_wallet.available}}</span>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td>ZCoin (XZC)</td>
+                                <td class="text-right">
+                                    <span >{{satoshi user.balance.zcoin_wallet.available}}</span>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td>Ethereum (ETH)</td>
+                                <td class="text-right">
+                                    <span >{{satoshi user.balance.ethereum_wallet.available}}</span>
+                                </td>
+                           </tr>
+                        </tbody>
+                    </table>
+                </div>
+               
+               </div>
+            </div>
+            </div>
+            <div class="col-md-6">
+               <div class="card">
+                  <h4>Account Lending (USD)</h4>  
+               <div class="content" style="margin:0px; padding:0px 10px">
+                  
+                  <div class="table-responsive" style="margin-top:10px; margin-bottom:10px; background:#fff; padding:5px;">
+                    <table class="table table-market-trade" style="margin-bottom:0px;">
+                        <tbody>
+                            <tr>
+                                <td class="td-market-trade">
+                                    Lending Wallet
+                                </td>
+                                <td class="text-right td-market-trade">
+                                    <span >{{money user.balance.lending_wallet.available}}</span>
+                                </td>
+                               
+                            </tr>
+                            <tr>
+                                <td>Total Lending</td>
+                                <td class="text-right">
+                                    <span >{{money user.total_invest}}</span>
+                                 </td>
+                            </tr>
+                            <tr>
+                                <td>Active Lending</td>
+                                <td class="text-right">
+                                    <span >{{money user.active_invest}}</span>
+                                </td>
+          
+                            </tr>
+
+                           <tr>
+                                <td>Total Earned</td>
+                                <td class="text-right">
+                                    <span >{{money user.total_earn}}</span>
+                                </td>
+                           </tr>
+
+                           <tr>
+                                <td>Total Capital Return</td>
+                                <td class="text-right">
+                                    <span >0.00</span>
+                                </td>
+                           </tr>
+
+                           <tr>
+                                <td>Number Of Affiliates</td>
+                                <td class="text-right">
+                                    <span >{{numberFormat numberAffiliate}}</span>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td>Total Affiliate Lending</td>
+                                <td class="text-right">
+                                    <span >{{money sumLendingF1}}</span>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td>Total System Lending</td>
+                                <td class="text-right">
+                                    <span >0.00</span>
+                                </td>
+                           </tr>
+                        </tbody>
+                    </table>
+                </div>
+               
+               </div>
+            </div>
+            </div>
+         </div>
+
+
+           
+
+    
+        <div class="row hidden-xs hidden-sm" style="margin-top:30px">
+         <div class="col-md-3 text-center">
+                  <button class="btn btn-social btn-fill btn-twitter" data-toggle="modal" data-target="#ModalTransfer">
+                   <i class="ti-angle-double-left"></i> USD To BBL <i class="ti-angle-double-left"></i></button>
+               </div>
+         <div class="col-md-3 col-xs-3 text-center">
+                  <a href="/account-deposits.html"  class="btn btn-social btn-fill btn-twitter"> <i class="ti-angle-double-left"></i> Lending <i class="ti-angle-double-left"></i></a>
+               </div>
+               <div class="col-md-3 text-center">
+                  <a href="/account-balance.html"  class="btn btn-social btn-fill btn-twitter"> <i class="ti-angle-double-left"></i> Wallets <i class="ti-angle-double-left"></i></a>
+               </div>
+               
+               
+               <div class="col-md-3 text-center">
+                  <a href="/markets.html"  class="btn btn-social btn-fill btn-twitter"> <i class="ti-angle-double-left"></i> BBL Markets <i class="ti-angle-double-left"></i></a>
+               </div>
+            </div>
+      
+         <div class="row">
+            <div class="col-md-12">
+               <div id="chartContainer" style="height: 370px; width: 100%;margin:50px 0"></div>
+            </div>
+         </div>
+   </div>
+</div>
+
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+   animationEnabled: true,
+   theme: "light2",
+   title:{
+      text: "Lending"
+   },
+   axisX:{
+      valueFormatString: "MMM DD",
+      crosshair: {
+         enabled: true,
+         snapToDataPoint: true
+      }
+   },
+   axisY: {
+      title: "%",
+      crosshair: {
+         enabled: false
+      }
+   },
+   toolTip:{
+      shared:true
+   },  
+   legend:{
+      cursor:"pointer",
+      verticalAlign: "bottom",
+      horizontalAlign: "left",
+      dockInsidePlotArea: true,
+      itemclick: toogleDataSeries
+   },
+   data: [
+   {
+      type: "line",
+      showInLegend: true,
+      name: "% $100 -> $999",
+      lineDashType: "dash",
+      color: "#888844",
+
+      dataPoints: [
+         { x: new Date(2017, 10, 1), y: 1.1 },
+         { x: new Date(2017, 10, 2), y: 1.2 },
+         { x: new Date(2017, 10, 3), y: 1.15 },
+         { x: new Date(2017, 10, 4), y: 2.2 },
+         { x: new Date(2017, 10, 5), y: 1.25 },
+         { x: new Date(2017, 10, 6), y: 3.15 },
+         { x: new Date(2017, 10, 7), y: 2 },
+         { x: new Date(2017, 10, 8), y: 2.25 },
+         { x: new Date(2017, 10, 9), y: 1.1 },
+      ]
+   },
+
+   {
+      type: "line",
+      showInLegend: true,
+      name: "% 1,000 -> $4,999",
+      lineDashType: "dash",
+      color: "#00BCD8",
+
+      dataPoints: [
+         { x: new Date(2017, 10, 1), y: 0.5 },
+         { x: new Date(2017, 10, 2), y: 2.2 },
+         { x: new Date(2017, 10, 3), y: 2.15 },
+         { x: new Date(2017, 10, 4), y: 3.2 },
+         { x: new Date(2017, 10, 5), y: 2.25 },
+         { x: new Date(2017, 10, 6), y: 2.15 },
+         { x: new Date(2017, 10, 7), y: 1 },
+         { x: new Date(2017, 10, 8), y: 1.25 },
+         { x: new Date(2017, 10, 9), y: 1.1 },
+      ]
+   },
+
+   {
+      type: "line",
+      showInLegend: true,
+      name: "% $5,000 -> $9,999",
+      lineDashType: "dash",
+      color: "#1986b5",
+
+      dataPoints: [
+         { x: new Date(2017, 10, 1), y: 1.5 },
+         { x: new Date(2017, 10, 2), y: 4.2 },
+         { x: new Date(2017, 10, 3), y: 5.15 },
+         { x: new Date(2017, 10, 4), y: 1.2 },
+         { x: new Date(2017, 10, 5), y: 1.25 },
+         { x: new Date(2017, 10, 6), y: 1.15 },
+         { x: new Date(2017, 10, 7), y: 1 },
+         { x: new Date(2017, 10, 8), y: 3.25 },
+         { x: new Date(2017, 10, 9), y: 1.1 },
+      ]
+   },
+
+   {
+      type: "line",
+      showInLegend: true,
+      name: "$10,000 -> $100,000",
+      lineDashType: "dash",
+      color: "#99003d",
+
+      dataPoints: [
+         { x: new Date(2017, 10, 1), y: 2 },
+         { x: new Date(2017, 10, 2), y: 2.1 },
+         { x: new Date(2017, 10, 3), y: 2.3 },
+         { x: new Date(2017, 10, 4), y: 2.4 },
+         { x: new Date(2017, 10, 5), y: 2.5 },
+         { x: new Date(2017, 10, 6), y: 2.6 },
+         { x: new Date(2017, 10, 7), y: 2.7 },
+         { x: new Date(2017, 10, 8), y: 2.8 },
+         { x: new Date(2017, 10, 9), y: 2.9 },
+   
+      ]
+   },
+
+   ]
+});
+chart.render();
+
+function toogleDataSeries(e){
+   if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+      e.dataSeries.visible = false;
+   } else{
+      e.dataSeries.visible = true;
+   }
+   chart.render();
+}
+
+}
+</script>

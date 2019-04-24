@@ -1,0 +1,435 @@
+<!DOCTYPE >
+<html  class="">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+      <title></title>
+     
+      <link href="/library_chart/chart.css" rel="stylesheet" type="text/css">
+   </head>
+   <body class="Light" cz-shortcut-listen="true">
+    <input type="hidden" value="{{MarketName}}" id="_MarketName_" name="">
+      <div class="exchange_content">
+      <div id="load_chart">
+      <style type="text/css">
+         .stx-btn#shareBtn {
+         position: relative;
+         top: auto;
+         right: auto;
+         }
+         .stx-nav .stx-btn.stx-menu-btn#periodBtn {
+         -webkit-border-radius: 3px;
+         -moz-border-radius: 3px;
+         border-radius: 3px;
+         margin-left: 12px;
+         float: left;
+         }
+         .stx-wrapper {
+         width: 100%;
+         height: 100% !important;
+         position: absolute;
+         left: 0;
+         right: 0;
+         }
+         .Light .chartContainer{
+         height: -webkit-calc(100% - 96px) !important;
+         height: -moz-calc(100% - 96px) !important;
+         height: calc(100% - 96px) !important;
+         }
+         .stx-nav{
+         background: #444444;
+         }
+         #toolbarDraw {
+         width: 464px;
+         }
+         .stx-toolbar .menuSelect li {
+         float: left;
+         width: 200px;
+         }
+         .menuSelect.studies {
+         width: 602px;
+         }
+         ul.hu li {
+         width: 130px;
+         }
+         .huField {
+         width: 100px;
+         }
+         .stx-toolbar ul.hu {
+         width: 400px;
+         }
+         #studyDialog {
+         max-height: 280px;
+         }
+         .stx-dialog {
+         margin: 50px auto;
+         }
+         .ciqColorPicker {
+         margin: -20px 0 0 0;
+         }
+      </style>
+      <div class="stx-wrapper" style="position: absolute; left: 0px; top: 0px; width: 100%;">
+         <!-- Nav -->
+         <div class="stx-nav">
+            <div id="periodBtn" class="stx-btn stx-menu-btn stxMenu">
+               30 Min<em></em>
+               <ul id="periodicity" class="periodicity menuSelect menuOutline" style="display:none">
+                  <li stxtoggle="changePeriodicity(&#39;day&#39;)">1 D</li>
+                  <li stxtoggle="changePeriodicity(&#39;3d&#39;)">3 D</li>
+                  <li stxtoggle="changePeriodicity(&#39;week&#39;)">1 W</li>
+                  <li stxtoggle="changePeriodicity(&#39;month&#39;)">1 Mo</li>
+                  <li class="stx-menu-divider"></li>
+                  <li stxtoggle="changePeriodicity(&#39;hour&#39;)">1 Hr</li>
+                  <li class="stx-menu-divider"></li>
+                  <li stxtoggle="changePeriodicity(1)">1 Min</li>
+                  <li stxtoggle="changePeriodicity(5)">5 Min</li>
+                  <li stxtoggle="changePeriodicity(15)">15 Min</li>
+                  <li stxtoggle="changePeriodicity(30)">30 Min</li>
+               </ul>
+            </div>
+            <div class="stx-menus">
+               <div class="stx-btn stx-menu-btn stxMenu">
+                  Chart<em></em>
+                  <ul id="chart-display" class="chart-display menuSelect menuOutline" style="display:none">
+                     <li class="stx-heading">Chart Style</li>
+                     <li stxtoggle="stxx.setChartType(&#39;candle&#39;)">Candle</li>
+                     <li stxtoggle="stxx.setChartType(&#39;bar&#39;)">Bar</li>
+                     <li stxtoggle="stxx.setChartType(&#39;colored_bar&#39;)">Colored Bar</li>
+                     <li stxtoggle="stxx.setChartType(&#39;line&#39;)">Line</li>
+                     <li stxtoggle="stxx.setChartType(&#39;hollow_candle&#39;)">Hollow Candle</li>
+                     <li stxtoggle="stxx.setChartType(&#39;mountain&#39;)">Mountain</li>
+                     <li class="stx-menu-divider"></li>
+                     <li class="stx-heading">Chart Scale</li>
+                     <li class="stx-option" stxtoggle="toggleLog()">Log Scale<span class="stx-checkbox stx-logscale false"></span></li>
+                  </ul>
+               </div>
+               <div class="stx-btn stx-menu-btn stxMenu">
+                  Studies<em></em>
+                  <div id="studies" class="studies menuSelect menuOutline" style="display:none">
+                     <ul class="col">
+                        <li stxtoggle="studyDialog(this, &#39;ADX&#39;);">ADX/DMS</li>
+                        <li stxtoggle="studyDialog(this, &#39;ATR&#39;);">Average True Range</li>
+                        <li stxtoggle="studyDialog(this, &#39;Bollinger Bands&#39;);">Bollinger Bands</li>
+                        <li stxtoggle="studyDialog(this, &#39;COG&#39;);">Center Of Gravity</li>
+                        <li stxtoggle="studyDialog(this, &#39;Chaikin MF&#39;);">Chaikin Money Flow</li>
+                        <li stxtoggle="studyDialog(this, &#39;CCI&#39;);">Commodity Channel Index</li>
+                        <li stxtoggle="studyDialog(this, &#39;Ehler Fisher&#39;);">Ehler Fisher Transform</li>
+                        <li stxtoggle="studyDialog(this, &#39;Elder Force&#39;);">Elder Force Index</li>
+                        <li stxtoggle="studyDialog(this, &#39;Elder Ray&#39;);">Elder Ray</li>
+                        <li stxtoggle="studyDialog(this, &#39;Fractal Chaos Bands&#39;);">Fractal Chaos Bands</li>
+                        <li stxtoggle="studyDialog(this, &#39;Fractal Chaos&#39;);">Fractal Chaos Oscillator</li>
+                        <li stxtoggle="studyDialog(this, &#39;Intraday Mtm&#39;);">Intraday Momentum Index</li>
+                     </ul>
+                     <ul class="col">
+                        <li stxtoggle="studyDialog(this, &#39;Keltner&#39;);">Keltner Channel</li>
+                        <li stxtoggle="studyDialog(this, &#39;Lin Fcst&#39;);">Linear Reg Forecast</li>
+                        <li stxtoggle="studyDialog(this, &#39;Lin R2&#39;);">Linear Reg R2</li>
+                        <li stxtoggle="studyDialog(this, &#39;macd&#39;);">MACD</li>
+                        <li stxtoggle="studyDialog(this, &#39;Momentum&#39;);">Momentum Indicator</li>
+                        <li stxtoggle="studyDialog(this, &#39;M Flow&#39;);">Money Flow Index</li>
+                        <li stxtoggle="studyDialog(this, &#39;ma&#39;);">Moving Average</li>
+                        <li stxtoggle="studyDialog(this, &#39;MA Env&#39;);">Moving Average Envelope</li>
+                        <li stxtoggle="studyDialog(this, &#39;On Bal Vol&#39;);">On Balance Volume</li>
+                        <li stxtoggle="studyDialog(this, &#39;PSAR&#39;);">Parabolic SAR</li>
+                        <li stxtoggle="studyDialog(this, &#39;Price Vol&#39;);">Price Volume Trend</li>
+                        <li stxtoggle="studyDialog(this, &#39;RAVI&#39;);">RAVI</li>
+                     </ul>
+                     <ul class="col">
+                        <li stxtoggle="studyDialog(this, &#39;rsi&#39;);">RSI</li>
+                        <li stxtoggle="studyDialog(this, &#39;Schaff&#39;);">Schaff Trend Cycle</li>
+                        <li stxtoggle="studyDialog(this, &#39;STD Dev&#39;);">Standard Deviation</li>
+                        <li stxtoggle="studyDialog(this, &#39;stochastics&#39;);">Stochastics</li>
+                        <li stxtoggle="studyDialog(this, &#39;Stch Mtm&#39;);">Stochastic Momentum Index</li>
+                        <li stxtoggle="studyDialog(this, &#39;Swing&#39;);">Swing Index</li>
+                        <li stxtoggle="studyDialog(this, &#39;Trade Vol&#39;);">Trade Volume Index</li>
+                        <li stxtoggle="studyDialog(this, &#39;vol undr&#39;);">Vol Underlay<span class="stx-remove-study" id="vol-undr" style="display: inline-block;"></span></li>
+                        <li stxtoggle="studyDialog(this, &#39;vchart&#39;);">Volume</li>
+                        <li stxtoggle="studyDialog(this, &#39;Vol Osc&#39;);">Volume Oscillator</li>
+                        <li stxtoggle="studyDialog(this, &#39;Vol ROC&#39;);">Volume Rate of Change</li>
+                        <li stxtoggle="studyDialog(this, &#39;Williams %R&#39;);">Williams %R</li>
+                     </ul>
+                  </div>
+               </div>
+               <div id="cogBtn" class="stx-btn stx-menu-btn stxMenu">
+                  &nbsp;<em></em>
+                  <ul id="cog" class="cog menuSelect menuOutline" style="display:none">
+                     <li class="stx-heading">Timezone</li>
+                     <li stxtoggle="STX.DialogManager.displayDialog(&#39;timezoneDialog&#39;);STX.TimeZoneWidget.populateDialog(&#39;timezoneDialog&#39;);">Change Timezone</li>
+                     <li class="stx-menu-divider">&nbsp;</li>
+                     <li class="stx-heading">Default Themes</li>
+                     <li class="stx-menu-content">
+                        <ul class="menuSelect" id="builtInThemeSelector">
+                           <li>Light</li>
+                           <li>Dark</li>
+                        </ul>
+                     </li>
+                     <li class="stx-menu-content">
+                        <ul class="injected" id="customThemeSelector">
+                           <li class="stx-heading">Custom Themes</li>
+                           <li class="themeSelectorTemplate" style="display:none">
+                              <a class="stxItem"></a>
+                              <div class="stx-btn stx-ico"><span class="stx-ico-close stxClose">x</span></div>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="stx-menu-content">
+                        <div class="stx-btn theme" stxtoggle="STX.DialogManager.displayDialog(&#39;themeDialog&#39;);STX.ThemeManager.populateDialog(&#39;themeDialog&#39;, stxx);">New Custom Theme</div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <!-- End Nav -->
+         <!-- Toolbar -->
+         <div class="stx-toolbar" id="stx-toolbar">
+            <div class="drawOptions">
+               <!--<div class="drawBtn stx-btn" onClick="stxx.undoLast()">Undo</div>-->
+               <div class="drawBtn stx-btn stx-menu-btn stxMenu">
+                  <span id="toolSelection">Select Tool</span> <em></em>
+                  <ul id="toolbarDraw" class="draw menuSelect menuOutline" style="display:none">
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;&#39;,this);STX.DrawingToolbar.setCrosshairs(false, this)">None</li>
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;&#39;,this);STX.DrawingToolbar.setCrosshairs(true, this)">Crosshairs</li>
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;annotation&#39;,this);">Annotation</li>
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;fibonacci&#39;,this);">Fibonacci</li>
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;horizontal&#39;,this);">Horizontal</li>
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;vertical&#39;,this);">Vertical</li>
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;line&#39;, this);">Line</li>
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;ray&#39;,this);">Ray</li>
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;segment&#39;,this);">Segment</li>
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;rectangle&#39;,this);">Rectangle</li>
+                     <li stxtoggle="STX.DrawingToolbar.setDrawingType(&#39;ellipse&#39;,this);">Ellipse</li>
+                     <li stxtoggle="stxx.clearDrawings()">Clear Drawings</li>
+                  </ul>
+                  <br style="clear: left;">
+               </div>
+               <div class="stx-drawing">
+                  <div class="stx-draw-settings stxToolbarFill" style="display: none;">
+                     <div class="stx-heading">Fill:</div>
+                     <div class="stx-color stxFillColorPicker" style="background-color: #7DA6F5;"><span></span></div>
+                  </div>
+                  <div class="stx-draw-settings stxToolbarLine" style="display: none;">
+                     <div class="stx-heading">Line:</div>
+                     <div class="stx-color stxLineColorPicker" style="background-color: transparent;"><span></span></div>
+                     <div class="stx-line-style stx-btn stx-menu-btn stxMenu stxToolbarLinePicker" style="display: none;">
+                        <span class="stx-line stxLineDisplay weight1 style1"></span><em></em>
+                        <ul id="stx-line-style-menu" class="stx-line-style-menu menuSelect menuOutline" style="display:none;">
+                           <li stxtoggle="STX.DrawingToolbar.setLine(1,&#39;solid&#39;, this)"><span class="stx-line style1 weight1"></span></li>
+                           <li stxtoggle="STX.DrawingToolbar.setLine(3,&#39;solid&#39;, this)"><span class="stx-line style1 weight3"></span></li>
+                           <li stxtoggle="STX.DrawingToolbar.setLine(5,&#39;solid&#39;, this)"><span class="stx-line style1 weight5"></span></li>
+                           <li class="stxToolbarDotted stx-menu-divider" style="display: none;"></li>
+                           <li class="stxToolbarDotted" stxtoggle="STX.DrawingToolbar.setLine(1,&#39;dotted&#39;, this)" style="display: none;"><span class="stx-line style2 weight1"></span></li>
+                           <li class="stxToolbarDotted" stxtoggle="STX.DrawingToolbar.setLine(3,&#39;dotted&#39;, this)" style="display: none;"><span class="stx-line style2 weight3"></span></li>
+                           <li class="stxToolbarDotted" stxtoggle="STX.DrawingToolbar.setLine(5,&#39;dotted&#39;, this)" style="display: none;"><span class="stx-line style2 weight5"></span></li>
+                           <li class="stxToolbarDashed stx-menu-divider" style="display: none;"></li>
+                           <li class="stxToolbarDashed" stxtoggle="STX.DrawingToolbar.setLine(1,&#39;dashed&#39;, this)" style="display: none;"><span class="stx-line style3 weight1"></span></li>
+                           <li class="stxToolbarDashed" stxtoggle="STX.DrawingToolbar.setLine(3,&#39;dashed&#39;, this)" style="display: none;"><span class="stx-line style3 weight3"></span></li>
+                           <li class="stxToolbarDashed" stxtoggle="STX.DrawingToolbar.setLine(5,&#39;dashed&#39;, this)" style="display: none;"><span class="stx-line style3 weight5"></span></li>
+                           <li class="stxToolbarNone stx-menu-divider" style="display: none;"></li>
+                           <li class="stxToolbarNone" stxtoggle="STX.DrawingToolbar.setLine(0,&#39;none&#39;, this)" style="display: none;">None</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="stx-draw-settings stxToolbarAxisLabel" style="display: none;">
+                     <div class="stx-heading">Axis Label:</div>
+                     <span class="stx-checkbox stxAxisLabel true" onclick="STX.DrawingToolbar.toggleAxisLabel(this);"></span>
+                  </div>
+               </div>
+            </div>
+            <ul class="hu">
+               <li><span class="huLabel">O: </span><span id="huOpen" class="huField"></span></li>
+               <li><span class="huLabel">H: </span><span id="huHigh" class="huField"></span></li>
+               <li><span class="huLabel">C: </span><span id="huClose" class="huField"></span></li>
+               <li><span class="huLabel">L: </span><span id="huLow" class="huField"></span></li>
+               <li><span class="huLabel">V: </span><span id="huVolume" class="huField"></span></li>
+               <li><span class="huLabel">B: </span><span id="huBaseVolume" class="huField"></span></li>
+            </ul>
+         </div>
+         <div class="stx-dialog-container">
+            <div id="studyDialog" style="display:none;" class="stx-dialog">
+               <h4 class="title"></h4>
+               <div onclick="STX.DialogManager.dismissDialog()" class="stx-btn stx-ico"><span class="stx-ico-close"></span></div>
+               <div id="inputs">
+                  <div class="inputTemplate" style="display:none">
+                     <div class="stx-heading"></div>
+                     <div class="stx-data"></div>
+                  </div>
+               </div>
+               <div id="outputs">
+                  <hr>
+                  <div class="outputTemplate" style="display:none">
+                     <div class="stx-heading"></div>
+                     <div class="stx-color"><span></span></div>
+                  </div>
+               </div>
+               <div id="parameters"></div>
+               <div onclick="createStudy();STX.DialogManager.dismissDialog()" class="stx-btn">Create</div>
+            </div>
+            <div id="studyOverZones" style="display:none">
+               Show Zones
+               <input id="studyOverZonesEnabled" type="checkbox" class="stx-input-check">
+               <div class="outputTemplate">
+                  <div class="stx-heading">OverBought</div>
+                  <div class="stx-data">
+                     <input id="studyOverBoughtValue" type="text" style="width:18px;" class="stx-input-field">
+                     <div class="stx-color" id="studyOverBoughtColor"><span></span></div>
+                  </div>
+               </div>
+               <div class="outputTemplate">
+                  <div class="stx-heading">OverSold</div>
+                  <div class="stx-data">
+                     <input id="studyOverSoldValue" type="text" style="width:18px;" class="stx-input-field">
+                     <div class="stx-color" id="studyOverSoldColor"><span></span></div>
+                  </div>
+               </div>
+            </div>
+            <!-- Timezone Dialogs -->
+            <div id="timezoneDialog" style="display:none;" class="stx-dialog">
+               <h4 class="title">Choose Timezone</h4>
+               <div onclick="STX.DialogManager.dismissDialog()" class="stx-btn stx-ico"><span class="stx-ico-close">Close</span></div>
+               <p>To set your timezone use the location button below, or scroll through the following list...</p>
+               <div class="detect">
+                  <div class="stx-btn" onclick="STX.TimeZoneWidget.removeTimeZone();STX.DialogManager.dismissDialog();">Use My Current Location</div>
+               </div>
+               <div id="timezoneDialogWrapper" style="max-height:360px;">
+                  <ul>
+                     <li id="timezoneTemplate" style="display:none;cursor:pointer;"></li>
+                  </ul>
+               </div>
+               <div class="instruct">(Scroll for more options)</div>
+            </div>
+            <!-- Theme Dialog -->
+            <div id="themeDialog" style="display:none" class="stx-dialog">
+               <h4>Create a New Custom Theme</h4>
+               <div onclick="STX.DialogManager.dismissDialog()" class="stx-btn stx-ico"><span class="stx-ico-close">Close</span></div>
+               <div class="settings">
+                  <ul>
+                     <li class="stx-heading">Chart Style</li>
+                     <li>
+                        <div class="stx-heading"><span>Candle</span>/<span>Bar</span>/<span>Line</span></div>
+                        <div class="stx-data">
+                           <div class="stx-color stx_candle_up"><span></span></div>
+                           <div class="stx-color stx_candle_down"><span></span></div>
+                        </div>
+                        <div class="stx-heading"><span>Wick</span></div>
+                        <div class="stx-data">
+                           <div class="stx-color stx_candle_shadow_up"><span></span></div>
+                           <div class="stx-color stx_candle_shadow_down"><span></span></div>
+                        </div>
+                        <div class="stx-heading"><input id="candleBordersOn" type="checkbox" class="stx-input-check" checked=""> <span>Candle Borders</span></div>
+                        <div class="stx-data">
+                           <div class="stx-border-color stx_candle_up"><span></span></div>
+                           <div class="stx-border-color stx_candle_down"><span></span></div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="stx-heading"><span>Monotone</span> <span>Bar</span>/<span>Line</span></div>
+                        <div class="stx-data">
+                           <div class="stx-color stx_candle_shadow"><span></span></div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="stx-heading">
+                           <div><span>Mountain Charts</span></div>
+                           <input id="mountainGradientOn" type="checkbox" class="stx-input-check" style="margin-left:5px" checked=""> <span>Gradient</span>
+                        </div>
+                        <div class="stx-data">
+                           <div class="stx-border-color stx_mountain"><span></span></div>
+                        </div>
+                     </li>
+                  </ul>
+                  <ul>
+                     <li class="stx-heading">Background</li>
+                     <li>
+                        <div class="stx-heading">Background</div>
+                        <div class="stx-data">
+                           <div class="stx-color backgroundColor"><span></span></div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="stx-heading">Grid Lines</div>
+                        <div class="stx-data">
+                           <div class="stx-color stx_grid"><span></span></div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="stx-heading">Date Dividers</div>
+                        <div class="stx-data">
+                           <div class="stx-color stx_grid_dark"><span></span></div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="stx-heading">Axis Text</div>
+                        <div class="stx-data">
+                           <div class="stx-color stx_xaxis_dark"><span></span></div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <label class="themeName" for="themeName">New Theme Name:</label>
+               <input type="text" id="themeName" name="themeName" autocapitalize="off" autocorrect="off" spellcheck="off" value="My Theme" class="stx-input-field">
+               <div onclick="STX.ThemeManager.saveTheme($$(&#39;themeName&#39;).value, stxx);STX.DialogManager.dismissDialog()" class="stx-btn">Save Theme</div>
+            </div>
+         </div>
+         <!-- End Dialog Container -->
+         <!-- Chart -->
+         <div class="chartContainer" style="height: 460px; width: 878px;">
+            <!-- This is the container for the chart itself. This div will be passed in to the STXChart object. You may place this anywhere on your page. -->
+            <span class="stx-btn stx_annotation_save" style="display: none;" id="annotationSave">save</span><span class="stx-btn stx_annotation_cancel" style="display: none; margin-left:10px;" id="annotationCancel">cancel</span>
+            <div id="mSticky" style="display: none; top: 102px; right: 266px;"> <span id="mStickyInterior" style="display: none;"></span> <span id="mStickyRightClick" class="rightclick_drawing"><span id="overlayTrashCan" class="stx-btn" style="display:none"><span class="stx-ico-trash">&nbsp;</span></span> <span id="mouseDeleteInstructions" style="display: none;"><span>(</span><span id="mouseDeleteText">right-click to delete</span><span id="mouseManageText">right-click to manage</span><span>)</span></span></span></div>
+            <div class="stx_crosshair stx_crosshair_x" style="left: 711.5px; display: none;" id="crossX"></div>
+            <div class="stx_crosshair stx_crosshair_y" style="top: 102px; left: 0px; width: 806px; display: none;" id="crossY"></div>
+            <div class="stx_chart_controls" style="display: block; bottom: 22px;" id="chartControls">
+               <div id="chartSize"><span id="zoomOut" class="stx-zoom-out"></span><span id="zoomIn" class="stx-zoom-in"></span></div>
+            </div>
+            <div class="stx-float-date" style="display: none; left: 670.5px; bottom: 0px;" id="floatDate">01-23 00:00</div>
+            <div class="stx-ico-handle" style="display: none;" id="handleTemplate"><span></span></div>
+            <div class="stx-panel-control" id="iconsTemplate">
+               <div class="stx-panel-title"></div>
+               <div class="stx-btn-panel"><span class="stx-ico-up"></span></div>
+               <div class="stx-btn-panel"><span class="stx-ico-focus"></span></div>
+               <div class="stx-btn-panel"><span class="stx-ico-down"></span></div>
+               <div class="stx-btn-panel"><span class="stx-ico-edit"></span></div>
+               <div class="stx-btn-panel"><span class="stx-ico-close"></span></div>
+            </div>
+            <div class="stx-baseline-handle fa" style="display: none;" id="baselineHandle"></div>
+            <div class="stx-holder stx-panel-chart" style="right: 0px; top: 0px; left: 0px; height: 354px; display: block;">
+               <div class="stx-subholder" style="z-index: 1; left: 0px; width: 813px; top: 0px; height: 335px;">
+                  <div class="stx-panel-control stx-show stx-chart-panel" id="iconsTemplate">
+                     <div class="stx-panel-title chart-title">{{MarketName}}</div>
+                     <div class="stx-btn-panel" style="display: none;"><span class="stx-ico-up"></span></div>
+                     <div class="stx-btn-panel" style="display: none;"><span class="stx-ico-focus"></span></div>
+                     <div class="stx-btn-panel" style="display: none;"><span class="stx-ico-down"></span></div>
+                     <div class="stx-btn-panel" style="display: none;"><span class="stx-ico-edit"></span></div>
+                     <div class="stx-btn-panel" style="display: none;"><span class="stx-ico-close"></span></div>
+                  </div>
+                  <div id="home" class="stx_jump_today home" style="display:none"><span></span></div>
+               </div>
+            </div>
+            <div class="stx-ico-handle" style="display: none;" id="null"><span></span></div>
+            <canvas height="354" width="878" style="position: absolute; left: 0px; width: 878px; height: 354px;"></canvas>
+            <canvas height="354" width="878" style="position: absolute; left: 0px; width: 878px; height: 354px;"></canvas>
+            <canvas height="354" width="878" style="position: absolute; left: 0px; width: 878px; height: 354px;"></canvas>
+         </div>
+         <!-- End Chart -->
+         <script type="text/javascript" src="/library_chart/text_4.js"></script>
+         <script type="text/javascript" src="/library_chart/text_1.js"></script>
+         
+         <script type="text/javascript">
+            var bittrex = bittrex || {};
+            bittrex.market = {
+              marketName : $('#_MarketName_').val(),
+              baseCurrencyName : $('#_MarketName_').val(),
+              baseCurrencyLong : $('#_MarketName_').val(),
+              marketCurrencyName : $('#_MarketName_').val(),
+              marketCurrencyLong : 'Bitcon',
+                minTradeSize : '1.72723504',
+              theme: 'dark',
+              fetchTicks:  true
+            };
+         </script>
+         <script type="text/javascript" src="/library_chart/text_3.js"></script>
+         <script type="text/javascript" src="/library_chart/text_2.js"></script>
+      </div>
+   </body>
+</html>

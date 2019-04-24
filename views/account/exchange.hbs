@@ -1,0 +1,383 @@
+<div class="content exchange-page">
+   <div class="container-fluid">
+      <div class="row">
+         
+      <!-- <div class="card">
+         <div class="header">
+            <div class="col-xs-12">
+               <div class="">
+                  <div class="content">
+                     <div class="row">
+                        <div class="col-xs-12">
+                           <div class="">
+                              <p>Referral link:</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-footer" style="margin-bottom: 50px;">
+                     <div class="input-group">
+                        <span class="input-group-btn">
+                           <button style="color: #fff" class="btn btn-social btn-fill btn-twitter copy" data-clipboard-action="copy" data-clipboard-target="#link" type="button">
+                              <div class="icon dripicons-copy"></div>
+                              Copy 
+                           </button>
+                        </span>
+                        <input style="background: #fff" id="link" readonly="" type="text" value="" class="form-control refferal_link"> 
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="clearfix"></div>
+         </div>
+      </div> -->
+      <div class="row">
+         <div class="col-md-12">
+            <div class="card">
+               <div class="header">
+                  <h4 style="font-weight: 500; margin:10px 0px; font-size:16px">Markets Open</h4>
+                     <div class="content balance_page">
+                       <table class="table table-striped table-bordered table-hover" style="width:100%;" >
+                           <thead>
+                              <tr class="title">
+                                 <td class="text-left">Market</td>
+                                 
+                                 <td class="">24Hr Volume</td>
+                                 <td>% Change</td>
+                                 <td>Last Price</td>
+                                 <td class="hidden-sm hidden-xs">24Hr High</td>
+                                 <td class="hidden-sm hidden-xs">24Hr Low</td>
+                              </tr>
+                              <tr>
+                                 <td class="text-left" >
+                                    <a style="color: #673AB7" href="/exchange/market/BTC-STC.html">BTC-STC</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi btc_bbl.volume}} BTC</td>
+                                 <td>
+                                    {{#if_eq btc_bbl.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{btc_bbl.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{btc_bbl.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td>
+                                 <td>{{satoshi btc_bbl.last}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_bbl.hight}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_bbl.low}} BTC</td>
+                              </tr>
+                              <tr>
+                                 <td class="text-left" >
+                                    <a style="color: #673AB7" href="/exchange/market/BTC-CUP.html">BTC-CUP</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi btc_cup.volume}} BTC</td>
+                                 <td>
+                                    {{#if_eq btc_cup.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{btc_cup.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{btc_cup.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td> 
+                                 <td>{{satoshi btc_cup.last}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_cup.hight}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_cup.low}} BTC</td>
+                              </tr>
+                              <tr>
+                                 <td class="text-left" >
+                                    <a style="color: #673AB7" href="/exchange/market/BTC-LTC.html">BTC-LTC</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi btc_ltc.volume}} BTC</td>
+                                 <td>
+                                    {{#if_eq dash_bbl.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{dash_bbl.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{dash_bbl.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td>
+                                 <td>{{satoshi btc_ltc.last}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_ltc.hight}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_ltc.low}} BTC</td>
+                              </tr>
+                              
+                              <tr>
+                                 <td class="text-left" >
+                                    <a style="color: #673AB7" href="/exchange/market/BTC-DASH.html">BTC-DASH</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi btc_dash.volume}} BTC</td>
+                                 <td>
+                                    {{#if_eq btc_dash.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{btc_dash.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{btc_dash.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td>
+                                 <td>{{satoshi btc_dash.last}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_dash.hight}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_dash.low}} BTC</td>
+                              </tr>
+                              <tr>
+                                 <td class="text-left" >
+                                    <a style="color: #673AB7" href="/exchange/market/BTC-SMART.html">BTC-SMART</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi btc_smart.volume}} BTC</td>
+                                 <td>
+                                    {{#if_eq btc_smart.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{btc_smart.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{btc_smart.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td>
+                                 <td>{{satoshi btc_smart.last}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_smart.hight}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_smart.low}} BTC</td>
+                              </tr>
+                              <tr>
+                                 <td class="text-left" >
+                                    <a style="color: #673AB7" href="/exchange/market/BTC-LBC.html">BTC-LBC</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi btc_lbc.volume}} BTC</td>
+                                 <td>
+                                    {{#if_eq btc_lbc.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{btc_lbc.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{btc_lbc.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td>
+                                 <td>{{satoshi btc_lbc.last}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_lbc.hight}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_lbc.low}} BTC</td>
+                              </tr>
+                              <tr>
+                                 <td class="text-left" >
+                                    <a style="color: #673AB7" href="/exchange/market/BTC-MONA.html">BTC-MONA</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi btc_mona.volume}} BTC</td>
+                                 <td>
+                                    {{#if_eq btc_mona.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{btc_mona.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{btc_mona.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td> 
+                                 <td>{{satoshi btc_mona.last}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_mona.hight}} BTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi btc_mona.low}} BTC</td>
+                              </tr>
+                              <!-- <tr>
+                                 <td class="text-left" >
+                                    <a href="/exchange/market/ETH-STC.html">ETH-STC</a>
+                                 </td>
+                                 <td class="hidden-sm hidden-xs text-left">Ethereum</td>
+                                 <td>0.00000000 ETH</td>
+                                 <td>
+                                    
+                                    <span  style="color: #468847">
+                                       0.0% 
+                                    </span>
+                                   
+                                 </td>
+                                 <td>0.00000000 ETH</td>
+                                 <td class="hidden-sm hidden-xs">0.00000000 ETH</td>
+                                 <td class="hidden-sm hidden-xs">0.00000000 ETH</td>
+                              </tr> -->
+                              <tr>
+                                 <td class="text-left" >
+                                    <a href="/exchange/market/LTC-STC.html">LTC-STC</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi ltc_bbl.volume}} LTC</td>
+                                 <td>
+                                    {{#if_eq ltc_bbl.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{ltc_bbl.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{ltc_bbl.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td>
+                                 <td>{{satoshi ltc_bbl.last}} LTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi ltc_bbl.hight}} LTC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi ltc_bbl.low}} LTC</td>
+                              </tr>
+
+                              <tr>
+                                 <td class="text-left" >
+                                    <a href="/exchange/market/DASH-STC.html">DASH-STC</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi dash_bbl.volume}} DASH</td>
+                                 <td>
+                                    {{#if_eq dash_bbl.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{dash_bbl.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{dash_bbl.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td>
+                                 <td>{{satoshi dash_bbl.last}} DASH</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi dash_bbl.hight}} DASH</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi dash_bbl.low}} DASH</td>
+                              </tr>
+
+                              <tr>
+                                 <td class="text-left" >
+                                    <a href="/exchange/market/SMART-STC.html">SMART-STC</a>
+                                 </td>
+                                
+                                 <td>{{satoshi smart_bbl.volume}} SMART</td>
+                                 <td>
+                                    {{#if_eq smart_bbl.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{smart_bbl.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{smart_bbl.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td>
+                                 <td>{{satoshi smart_bbl.last}} SMART</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi smart_bbl.hight}} SMART</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi smart_bbl.low}} SMART</td>
+                              </tr>
+
+                              <tr>
+                                 <td class="text-left" >
+                                    <a href="/exchange/market/LBC-STC.html">LBC-STC</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi lbc_bbl.volume}} LBC</td>
+                                 <td>
+                                    {{#if_eq lbc_bbl.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{lbc_bbl.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{lbc_bbl.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td>
+                                 <td>{{satoshi lbc_bbl.last}} LBC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi lbc_bbl.hight}} LBC</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi lbc_bbl.low}} LBC</td>
+                              </tr>
+
+                              <tr>
+                                 <td class="text-left" >
+                                    <a href="/exchange/market/MONA-STC.html">MONA-STC</a>
+                                 </td>
+                                 
+                                 <td>{{satoshi mona_bbl.volume}} MONA</td>
+                                 <td>
+                                    {{#if_eq mona_bbl.up_down 'up'}} 
+                                       <span  style="color: #468847">
+                                          {{mona_bbl.percent}} % 
+                                       </span>
+                                    {{else}}
+                                       <span style="color: #b94a48">
+                                          {{mona_bbl.percent}} %
+                                       </span>
+                                    {{/if_eq}}
+                                 </td>
+                                 <td>{{satoshi mona_bbl.last}} MONA</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi mona_bbl.hight}} MONA</td>
+                                 <td class="hidden-sm hidden-xs">{{satoshi mona_bbl.low}} MONA</td>
+                              </tr>
+
+                              
+
+                           </thead>
+                           <tbody>
+                              
+                           </tbody>
+                        </table>
+                     </div>
+               </div>
+            </div>
+         </div>
+
+         
+
+         <div class="col-md-12">
+            <div class="card">
+               <div class="header">
+                     <div class="content trade-table balance_page">
+                     <p>All trades have a 0.15% commission.</p>
+
+                     </div>
+               </div>
+            </div>
+         </div>
+         <div class="clearfix"></div>
+         
+         <div class="text-center bannder_exchange" style="position: relative;" >
+            <div style=" width: 400px; margin: 0 auto; position: relative;">
+               <i class="fa fa-times close_bannder" style="position: absolute; right: 5px;top: 5px; color: #bbb7b7; z-index: 899999; cursor: pointer;"></i>
+               <a href="https://xmax.santacoin.co" target="_blank">
+                  <img src="img/28894i.gif" style="width: 100%;" />
+               </a>
+            </div>
+         </div>
+         
+      </div>
+   </div>
+</div>
+
+<style type="text/css">
+.trade-table .table>thead>tr>td {
+       font-size: 14px;
+   }
+
+@media screen and (max-width: 768px){
+   .card .header{
+      padding: 20px 5px;
+   } 
+   .trade-table .table>thead>tr>td{
+      font-size: 11px;
+      text-align: left;
+   }
+   .trade-table .table>thead>tr>td{
+      font-size: 14px !important;
+   }
+
+}
+</style>

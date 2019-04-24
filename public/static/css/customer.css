@@ -1,0 +1,98 @@
+#pad-wrapper {
+    padding: 0 40px;
+    margin-top: 20px;
+}
+.navbar-inverse {
+    min-height: 48px;
+    margin-bottom: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #191e23;
+    background: #2c3742;
+    background: -moz-linear-gradient(top,#2c3742 0%,#28303a 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#2c3742),color-stop(100%,#28303a));
+    background: -webkit-linear-gradient(top,#2c3742 0%,#28303a 100%);
+    background: -o-linear-gradient(top,#2c3742 0%,#28303a 100%);
+    background: -ms-linear-gradient(top,#2c3742 0%,#28303a 100%);
+    background: linear-gradient(to bottom,#2c3742 0%,#28303a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2c3742',endColorstr='#28303a',GradientType=0);
+}
+
+.navbar-inverse {
+    background-color: #222;
+    border-color: #080808;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+    height: 47px;
+}
+.navbar .navbar-brand{
+	margin-top: 0px;
+}
+.navbar-inverse .nav>li>a {
+    padding: 13px 15px 8px;
+    border-left: 1px solid #101417;
+    color: #d6d6d6;
+    outline: 0;
+    height: 46px;
+    transition: background .1s linear;
+    -moz-transition: background .1s linear;
+    -webkit-transition: background .1s linear;
+    -o-transition: background .1s linear;
+}
+.navbar .navbar-nav>li>a{
+	margin: 0;
+	font-size: 14px;
+}
+.exchange-page .card{
+	background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    border-color: #ddd;
+}
+.exchange-page .panel-heading{
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.exchange-page .Volume_exchange .table>tbody>tr {
+    position: relative;
+    height: 60px;
+    border-bottom: 1px solid;
+}
+.table-market-trade span i{
+	margin-top: -5px;
+    float: right;
+    margin-left: 15px;
+}
+.exchange-page .Volume_exchange .usd{
+	font-size: 11px;
+	padding-right: 35px
+}
+.exchange-page .btn-submit-exchain{
+	color: #fff;
+}
+
+
+@media screen and (max-width: 767px) {
+    #pad-wrapper {
+        padding: 0 ;
+    }
+    .content{
+        overflow-x: scroll;
+    }
+    .navbar-header .navbar-toggle{
+        margin: 3px;
+    }
+    .nav-open .navbar-collapse{
+        display: block !important;
+    }
+    .navbar-nav{
+        background: #29323d;
+    }
+}

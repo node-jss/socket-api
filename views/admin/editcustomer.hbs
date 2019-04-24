@@ -1,0 +1,215 @@
+<div class="content">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="card">
+               <form method="post" action="/user/admin/updateUser" class="form-horizontal">
+                  <div class="header card-header-text text-center">
+                     <h4 class="title">Update User: <code> {{users.displayName}}</code></h4>
+                  </div>
+                  <div class="content">
+                     <fieldset>
+                        <div class="form-group text-center">
+                           <p>Sponser: {{user_node}}</p>
+                        </div>
+                     </fieldset>
+                     <fieldset>
+                        <div class="form-group">
+                           <label class="col-sm-2 control-label">Password</label>
+                           <input type="hidden" value="{{users._id}}" name="uid" class="form-control">
+                           <div class="col-sm-10"> <input type="password" name="password" class="form-control"> </div>
+                        </div>
+                     </fieldset>
+       
+                     <fieldset>
+                        <div class="text-center"> <button type="submit" class="btn btn-rose btn-fill btn-wd">Update</button> </div>
+                     </fieldset>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <div class="card">
+               <div class="content" id="">
+                  <table class="table table-market-trade" style="margin-bottom:0px;">
+                        <tbody>
+                          <tr>
+                                <td >
+                                    Lending (USD)
+                                </td>
+                                <td >
+                                    <span >{{ users.balance.lending_wallet.available}}</span>
+                                </td>
+                                <td >
+                                   
+                                </td>
+                               
+                            </tr>
+                            <tr>
+                                <td >
+                                    Bitbeeline (BBL)
+                                </td>
+                                <td >
+                                    <span >{{satoshi users.balance.coin_wallet.available}}</span>
+                                </td>
+                                <td >
+                                    <span >{{ users.balance.coin_wallet.cryptoaddress}}</span>
+                                </td>
+                               
+                            </tr>
+                            <tr>
+                                <td>Bitcoin (BTC)</td>
+                                <td class="">
+                                    <span >{{satoshi users.balance.bitcoin_wallet.available}}</span>
+                                 </td>
+                                 <td class="">
+                                    <span >{{ users.balance.bitcoin_wallet.cryptoaddress}}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bitcoin Cash (BCH)</td>
+                                <td class="">
+                                    <span >{{satoshi users.balance.bitcoincash_wallet.available}}</span>
+                                </td>
+                                 <td class="">
+                                    <span >{{ users.balance.bitcoincash_wallet.cryptoaddress}}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bitcoin Gold (BTG)</td>
+                                <td class="">
+                                    <span >{{satoshi users.balance.bitcoingold_wallet.available}}</span>
+                                </td>
+                                <td class="">
+                                    <span >{{ users.balance.bitcoingold_wallet.cryptoaddress}}</span>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td>Dash (DASH)</td>
+                                <td class="">
+                                    <span >{{satoshi users.balance.dashcoin_wallet.available}}</span>
+                                </td>
+                                 <td class="">
+                                    <span >{{ users.balance.dashcoin_wallet.cryptoaddress}}</span>
+                                </td>
+                           </tr>
+
+                           <tr>
+                                <td>Litecoin (LTC)</td>
+                                <td class="">
+                                    <span >{{satoshi users.balance.litecoin_wallet.available}}</span>
+                                </td>
+                                 <td class="">
+                                    <span >{{ users.balance.litecoin_wallet.cryptoaddress}}</span>
+                                </td>
+                           </tr>
+
+                           <tr>
+                                <td>Bitconnect (BCC)</td>
+                                <td class="">
+                                    <span >{{satoshi users.balance.bitconnect_wallet.available}}</span>
+                                </td>
+                                 <td class="">
+                                    <span >{{ users.balance.bitconnect_wallet.cryptoaddress}}</span>
+                                </td>
+                           </tr>
+
+                           <tr>
+                                <td>Verge (XVG)</td>
+                                <td class="">
+                                    <span >{{satoshi users.balance.verge_wallet.available}}</span>
+                                </td>
+                                <td class="">
+                                    <span >{{ users.balance.verge_wallet.cryptoaddress}}</span>
+                                </td>
+                           </tr>
+
+                           <tr>
+                                <td>Zcoin (XZC)</td>
+                                <td class="">
+                                    <span >{{satoshi users.balance.zcoin_wallet.available}}</span>
+                                </td>
+                                <td class="">
+                                    <span >{{ users.balance.zcoin_wallet.cryptoaddress}}</span>
+                                </td>
+                           </tr>
+                           <tr>
+                                <td>Ethereum (ETH)</td>
+                                <td class="">
+                                    <span >{{satoshi users.balance.ethereum_wallet.available}}</span>
+                                </td>
+                                <td class="">
+                                    <span >{{ users.balance.ethereum_wallet.cryptoaddress}}</span>
+                                </td>
+                                
+                           </tr>
+                           
+                        </tbody>
+                    </table>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <div class="card">
+               <div class="content" id="your_investment">
+                  <h3 class="text-center">History Coin Wallet</h3>
+                  <table id="login_history" class="table table-striped table-no-bordered table-hover" style="width:100%;cellspacing:0" >
+                     <thead>
+                        <tr>
+                           <th>Date</th>
+                           <th class="table-address">Type</th>
+                           <th>Amount</th>
+                           <th>Detail</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {{#each users.balance.coin_wallet.history}} 
+                        <tr>
+                           <td>{{prettifyDate this.date}} </td>
+                           <td>{{this.type}} </td>
+                           <td>{{satoshi this.amount}}</td>
+                           <td>{{this.detail}}</td>
+                        </tr>
+                        {{/each}} 
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col-md-12">
+            <div class="card">
+               <div class="content" id="your_investment">
+                  <h3 class="text-center">History Lending Wallet</h3>
+                  <table id="login_history" class="table table-striped table-no-bordered table-hover" style="width:100%;cellspacing:0" >
+                     <thead>
+                        <tr>
+                           <th>Date</th>
+                           <th class="table-address">Type</th>
+                           <th>Amount</th>
+                           <th>Detail</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {{#each users.balance.lending_wallet.history}} 
+                        <tr>
+                           <td>{{prettifyDate this.date}} </td>
+                           <td>{{this.type}} </td>
+                           <td>{{ this.amount}}</td>
+                           <td>{{this.detail}}</td>
+                        </tr>
+                        {{/each}} 
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

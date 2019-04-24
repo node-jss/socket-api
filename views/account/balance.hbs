@@ -1,0 +1,253 @@
+<div class="content wallet" ng-controller="balance_wallet">
+   <div class="container-fluid" >
+
+      
+     <!--  <div class="content_price_balance">
+         <div class="col-md-4 items col-sm-4 col-xs-6">
+            STC/USD : <span>{{price.coin.usd}}</span>
+         </div>
+         <div class="col-md-4 items col-sm-4 col-xs-6">
+            STC/BTC : <span>{{price.coin.btc}}</span>
+         </div>
+         <div class="col-md-4 items col-sm-4 col-xs-12">
+            BTC/USDT : <span>{{price.btc.usd}}</span>
+         </div>
+      </div> -->
+     
+
+      <div class="row">
+
+         <div class="col-md-12">
+
+            <div class="card">
+               <!-- <div class="header">
+                  <h4 style="font-weight: 500">ACCOUNT BALANCES
+
+                  </h4>
+                  <h4 class="Estimated" style="margin-right:5px;margin-bottom:5px;    font-weight: 500;margin: 0;">Estimated Value: {{Estimated.btc}} BTC / {{Estimated.usd}} USD</h4>
+               </div> -->
+
+               
+               <div class="content balance_page">
+                  <table class="table table-striped table-bordered table-hover" style="width:100%;" >
+                     <thead>
+                        <tr>
+                           <th style="text-align: center;min-width:77px;" ><i class="ti-plus"></i></th>
+                           <th>Currency Name</th>
+                           <th >Symbol</th>
+                           <th>Available Balance</th>
+                           <th class="hidden-xs">Pending Deposit</th>
+                        </tr>
+                        <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositBTC"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawBTC"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>Bitcoin</td>
+                           <td>BTC</td>
+                           <td>{{satoshi user.balance.bitcoin_wallet.available}}</td>
+                           <td class="hidden-xs">{{satoshi balance.btc}}</td>
+                        </tr>
+                        <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositSTC"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawSTC"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>Santacoin</td>
+                           <td>STC</td>
+                           <td>{{satoshi user.balance.coin_wallet.available}}</td>
+                           <td class="hidden-xs">{{satoshi balance.bbl}}</td>
+                        </tr>
+                        
+                        <!-- <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositBCH"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawBCH"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>Bitcoin Cash</td>
+                           <td>BCH</td>
+                           <td>{{satoshi user.balance.bitcoincash_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.bch}}</td>
+                        </tr>
+
+                        <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositBTG"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawBTG"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>Bitcoin Gold</td>
+                           <td>BTG</td>
+                           <td>{{satoshi user.balance.bitcoingold_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.btg}}</td>
+                        </tr>
+                        -->
+                        <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositLTC"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawLTC"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>Litecoin</td>
+                           <td>LTC</td>
+                           <td>{{satoshi user.balance.litecoin_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.ltc}}</td>
+                        </tr>
+                        <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositDASH"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawDASH"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>Dash</td>
+                           <td>DASH</td>
+                           <td>{{satoshi user.balance.dashcoin_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.dash}}</td>
+                        </tr> 
+                        <!-- <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositBCC"><i class="ti-plus"></i></span>
+                             
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawBCC"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>Bitconnect</td>
+                           <td>BCC</td>
+                           <td>{{satoshi user.balance.bitconnect_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.bcc}}</td>
+                        </tr> -->
+                        <!-- <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositXVG"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawXVG"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>Verge</td>
+                           <td>XVG</td>
+                           <td>{{satoshi user.balance.verge_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.xvg}}</td>
+                        </tr>
+                        <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositXZC"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawXZC"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>ZCoin</td>
+                           <td>XZC</td>
+                           <td>{{satoshi user.balance.zcoin_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.xzc}}</td>
+                        </tr>-->
+                        <!-- <tr >
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositETH"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawETH"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>Ethereum</td>
+                           <td>ETH</td>
+                           <td>{{satoshi user.balance.ethereum_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.eth}}</td>
+                        </tr>  -->
+                        <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositSMART"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawSMART"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>SmartCash</td>
+                           <td>SMART</td>
+                           <td>{{satoshi user.balance.smartcash_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.smart}}</td>
+                        </tr> 
+                        <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositLBC"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawLBC"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>LBRY Credits</td>
+                           <td>LBC</td>
+                           <td>{{satoshi user.balance.lbrycredits_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.lbc}}</td>
+                        </tr> 
+                        <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositMONA"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawMONA"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>MonaCoin</td>
+                           <td>MONA</td>
+                           <td>{{satoshi user.balance.monacoin_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.mona}}</td>
+                        </tr> 
+
+                        <tr>
+                           <td class="text-center">
+                              <span class="btn-primary" data-toggle="modal" data-target="#modalDepositCUP"><i class="ti-plus"></i></span>
+                              <span class="btn-primary withdraw_button" data-toggle="modal" data-target="#modalWithdrawCUP"><i class="ti-minus"></i></span>
+                           </td>
+                           <td>Cupcoin</td>
+                           <td>CUP</td>
+                           <td>{{satoshi user.balance.cupcoin_wallet.available }}</td>
+                           <td class="hidden-xs">{{satoshi balance.cup}}</td>
+                        </tr> 
+                     </thead>
+                     <tbody>
+                        
+                     </tbody>
+                  </table>
+
+                  <div class="clearfix"></div>
+                  <div class="row">
+
+                     <div class="col-md-12">
+                        <h4 class="pull-left" style="font-weight: 500">PENDING DEPOSITS</h4>
+                        <span class="pull-right reload_history_transaction" data-type="pending_deposit"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                        <div id="history-deposit-pending"></div>
+                     </div>
+
+                     <div class="col-md-12">
+                        <h4 class="pull-left" style="font-weight: 500">PENDING WITHDRAWALS</h4>
+                        <span class="pull-right reload_history_transaction" data-type="pending_withdraw"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                        <div id="history-withdraw-pendding"></div>
+                        
+                     </div>
+
+                     <div class="col-md-12">
+                        <h4 class="pull-left" style="font-weight: 500">WITHDRAWAL HISTORY</h4>
+                         <span class="pull-right reload_history_transaction" data-type="finish_withdraw"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                        <div id="history-withdraw-finish"></div>
+                       
+                     </div>
+
+                     <div class="col-md-12">
+                        <h4 class="pull-left" style="font-weight: 500">DEPOSIT HISTORY</h4>
+                        <span class="pull-right reload_history_transaction" data-type="finish_deposit"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                        <div id="history-deposit-finish"></div>
+                        
+                     </div>
+
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<style type="text/css">
+@media screen and (max-width: 768px){
+   span.dtr-data a{
+        width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+   }
+   table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before{
+      content: '-';
+    color: #ed362c;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 19px;
+   }
+   table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before{
+          font-size: 18px;
+    font-weight: 900;
+    line-height: 19px;
+   }
+}
+</style>

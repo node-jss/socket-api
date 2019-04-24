@@ -1,0 +1,25 @@
+HTTrack3.48-24 launched on Thu, 07 Dec 2017 23:05:08 at themehappy.com/html/mbusiness/M-Business/comingsoon.html
+(httrack themehappy.com/html/mbusiness/M-Business/comingsoon.html )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+23:09:53	Error: 	Exit requested by shell or user
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/css/bootstrap.min.css (themehappy.com/html/mbusiness/M-Business/assets/css/bootstrap.min.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/css/font-awesome.min.css (themehappy.com/html/mbusiness/M-Business/assets/css/font-awesome.min.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/css/owl.carousel.min.css (themehappy.com/html/mbusiness/M-Business/assets/css/owl.carousel.min.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/css/owl.theme.default.min.css (themehappy.com/html/mbusiness/M-Business/assets/css/owl.theme.default.min.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/css/animate.css (themehappy.com/html/mbusiness/M-Business/assets/css/animate.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/css/magnific-popup.css (themehappy.com/html/mbusiness/M-Business/assets/css/magnific-popup.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/css/YTPlayer.css (themehappy.com/html/mbusiness/M-Business/assets/css/YTPlayer.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/css/animated-headlines.css (themehappy.com/html/mbusiness/M-Business/assets/css/animated-headlines.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/css/style.css (themehappy.com/html/mbusiness/M-Business/assets/css/style.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/css/responsive.css (themehappy.com/html/mbusiness/M-Business/assets/css/responsive.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/switcher/switcher.css (themehappy.com/html/mbusiness/M-Business/assets/switcher/switcher.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/switcher/style1.css (themehappy.com/html/mbusiness/M-Business/assets/switcher/style1.css), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/img/template/apple-touch-icon.png (themehappy.com/html/mbusiness/M-Business/assets/img/template/apple-touch-icon.html), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/img/template/icon-72x72.png (themehappy.com/html/mbusiness/M-Business/assets/img/template/icon-72x72.html), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/assets/img/template/icon-114x114.png (themehappy.com/html/mbusiness/M-Business/assets/img/template/icon-114x114.html), file disappeared: No such file or directory
+23:09:54	Warning: 	engine: warning: unserialize error for themehappy.com/html/mbusiness/M-Business/index.html (themehappy.com/html/mbusiness/M-Business/index.html), file disappeared: No such file or directory

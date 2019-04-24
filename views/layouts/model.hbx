@@ -1,0 +1,112 @@
+<!-- ICO --><!-- 
+ --><!-- <div id="ModalICO" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">ICO BBL</h4>
+      </div>
+      <form method="post" accept-charset="utf-8" action="/account/ico/sumit-buy" id="frmICO" class="send-coin-form" autocomplete="off"  novalidate="novalidate">
+         <div class="modal-body">
+         <div class="form-group text-center" style="margin-bottom: 30px;">
+            <label class="text-center" style="margin-bottom: 30px;">Payment Method</label> 
+            <div class="row">
+               <div class="col-md-4 col-xs-6">
+                  <div class="method_payment bitcoin ">
+                     <div class="pull-left left_bl text-right">
+                        <img src="/assets/img/Bitcoin-256.png" width="25" />
+                     </div>
+                     <div class="pull-left  text-left">
+                        <span>Bitcoin</span>
+                        <b>{{user.balance.bitcoin_wallet.available}} BTC</b>
+                     </div>
+                     <div class="clearfix"></div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-xs-6">
+                  <div class="method_payment bitcoin_cash">
+                     <div class="pull-left left_bl text-right">
+                        <img src="/assets/img/Bitcoin-256.png" width="25" />
+                     </div>
+                     <div class="pull-left text-left">
+                        <span>Bitcoin Cash</span>
+                        <b>{{user.balance.bitcoincash_wallet.available}} BCH</b>
+                     </div>
+                     <div class="clearfix"></div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-xs-6">
+                  <div class="method_payment litecoin">
+                     <div class="pull-left left_bl text-right">
+                        <img src="/assets/img/litecoin.png" width="25" />
+                     </div>
+                     <div class="pull-left text-left">
+                        <span>Litecoin</span>
+                        <b>{{user.balance.litecoin_wallet.available}} LTC</b>
+                     </div>
+                     <div class="clearfix"></div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-xs-6">
+                  <div class="method_payment dashcoin">
+                     <div class="pull-left left_bl text-right">
+                        <img src="/assets/img/dash.png" width="25" />
+                     </div>
+                     <div class="pull-left text-left">
+                        <span>Dash</span>
+                        <b>{{user.balance.dashcoin_wallet.available}} DASH</b>
+                     </div>
+                     <div class="clearfix"></div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-xs-6">
+                  <div class="method_payment bitconnect">
+                     <div class="pull-left left_bl text-right">
+                        <img src="/assets/img/bitconnect.png" width="25" />
+                     </div>
+                     <div class="pull-left text-left">
+                        <span>Bitconnect</span>
+                        <b>{{user.balance.bitconnect_wallet.available}} BCC</b>
+                     </div>
+                     <div class="clearfix"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+            <input type="hidden" name="payment_method" id="payment_method" value="BTC">
+            <div class="row">
+               <div class="form-group col-md-6">
+                  <label>Amount BBL</label> 
+                  <div class="input-group">
+                     <input type="text" id="amount_coin" class="form-control input-flyp " name="amount_coin" placeholder="Enter amount BBL" required="" autocomplete="off">
+                     <div class="input-group-addon ng-binding">BBL</div>
+                  </div>
+               </div>
+               <div class="form-group col-md-6">
+                  <label>Amount <span class="unit_payment">BTC</span> Payment</label> 
+                  <div class="input-group">
+                     <div class="input-group-addon addon-aprox invoiced ">~</div>
+                     <input readonly="true" type="text" id="amount_btc" class="form-control input-flyp" name="amount_btc" placeholder="Enter amount BTC" required="" autocomplete="off">
+                     <div  class="input-group-addon unit_payment">BTC</div>
+                  </div>
+               </div>
+            </div>
+           
+            <div class="text-center" id="capatcha">
+               
+               <div class="g-recaptcha" data-theme="light"  data-sitekey="6LfTIDYUAAAAAIscAJ-qcY2EkCCZLfGK3O6FPnSj"></div>
+               
+            </div>
+            
+         
+         </div>
+         <div class="modal-footer">
+            <button type="submit" class="btn btn-social btn-fill btn-twitter frmWihtdrawBTC_Submit" data-type="coin"> Buy BBL
+               </button>
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+<!-- End ICO -->
