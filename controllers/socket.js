@@ -28,7 +28,7 @@ const binance = require('node-binance-api')().options({
 });
 var data_update;
 setTimeout(function() {
-	binance.websockets.prevDay(['BTCUSDT','ETHUSDT','LTCUSDT','DASHUSDT','XRPUSDT','EOSUSDT','USDTTUSD'], (error, response) => {
+	binance.websockets.prevDay(['BTCUSDT','ETHUSDT','LTCUSDT','DASHUSDT','XRPUSDT','EOSUSDT','TUSDUSDT'], (error, response) => {
 	  	//console.log("%"+response.symbol+" :"+response.priceChange);
 	  	if (response.symbol == 'BTCUSDT')
 	  		data_update = {$set : {'btc_change': parseFloat(response.priceChange)}};
@@ -48,7 +48,7 @@ setTimeout(function() {
 		})
 	});
 
-	binance.websockets.trades(['BTCUSDT','ETHUSDT','LTCUSDT','DASHUSDT','XRPUSDT','EOSUSDT','USDTTUSD'], (trades) => {
+	binance.websockets.trades(['BTCUSDT','ETHUSDT','LTCUSDT','DASHUSDT','XRPUSDT','EOSUSDT','TUSDUSDT'], (trades) => {
 	  	//console.log("USD "+trades.s+" : "+trades.p);
 	  	if (trades.s == 'BTCUSDT')
 	  		data_update = {$set : {'btc_usd': parseFloat(trades.p)}};
