@@ -71,6 +71,16 @@ setTimeout(function() {
 	});
 }, 6000);
 
+const CAValidator = require('crypto-address-validator');
+
+function CryptocurrencyAddressValidator(req, res){
+	var wallet = req.params.wallet;
+	var valid = CAValidator.validate('1KFzzGtDdnq5hrwxXGjwVnKzRbvf8WVxck', 'BTC');
+	if(valid)
+		return res.status(200).send({message: true})
+	else
+	    return res.status(200).send({message: false})
+}
 
 
 /*function process_buy_exchange(){
@@ -91,7 +101,8 @@ return module.exports = {
 	},
 	module : function(){
 		return {
-			process_buy_exchange
+			process_buy_exchange,
+			CryptocurrencyAddressValidator
 		}
 	}
 }
