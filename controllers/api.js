@@ -13,10 +13,10 @@ const CAValidator = require('crypto-address-validator');
 function CryptocurrencyAddressValidator(req, res){
 	var wallet = req.query.wallet;
 	var currency = req.query.currency;
-	if (currency != 'TBT')
+	if (currency != 'TBT' && currency != 'ETH')
 	{
 		var valid = CAValidator.validate(wallet, currency);
-
+		
 		if(valid)
 			return res.status(200).send({message: true})
 		else
