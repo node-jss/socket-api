@@ -29,21 +29,21 @@ const binance = require('node-binance-api')().options({
 var data_update;
 setTimeout(function() {
 	binance.websockets.prevDay(['BTCUSDT','ETHUSDT','LTCUSDT','DASHUSDT','XRPUSDT','EOSUSDT','TUSDUSDT'], (error, response) => {
-	  	//console.log("%"+response.symbol+" :"+response.priceChange);
+	  	
 	  	if (response.symbol == 'BTCUSDT')
-	  		data_update = {$set : {'btc_change': parseFloat(response.priceChange)}};
+	  		data_update = {$set : {'btc_change': parseFloat(response.percentChange)}};
 	  	if (response.symbol == 'ETHUSDT')
-	  		data_update = {$set : {'eth_change': parseFloat(response.priceChange)}};
+	  		data_update = {$set : {'eth_change': parseFloat(response.percentChange)}};
 	  	if (response.symbol == 'LTCUSDT')
-	  		data_update = {$set : {'ltc_change': parseFloat(response.priceChange)}};
+	  		data_update = {$set : {'ltc_change': parseFloat(response.percentChange)}};
 	  	if (response.symbol == 'DASHUSDT')
-	  		data_update = {$set : {'dash_change': parseFloat(response.priceChange)}};
+	  		data_update = {$set : {'dash_change': parseFloat(response.percentChange)}};
 	  	if (response.symbol == 'XRPUSDT')
-	  		data_update = {$set : {'xrp_change': parseFloat(response.priceChange)}};
+	  		data_update = {$set : {'xrp_change': parseFloat(response.percentChange)}};
 	  	if (response.symbol == 'EOSUSDT')
-	  		data_update = {$set : {'eos_change': parseFloat(response.priceChange)}};
+	  		data_update = {$set : {'eos_change': parseFloat(response.percentChange)}};
 	  	if (response.symbol == 'TUSDUSDT')
-	  		data_update = {$set : {'usdt_change': parseFloat(response.priceChange)}};
+	  		data_update = {$set : {'usdt_change': parseFloat(response.percentChange)}};
 	  	Ticker.update({},data_update,(err,responses)=>{
 		})
 	});
