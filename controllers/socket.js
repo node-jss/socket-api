@@ -28,7 +28,7 @@ const binance = require('node-binance-api')().options({
 });
 var data_update;
 setTimeout(function() {
-	binance.websockets.prevDay(['BTCUSDT','ETHUSDT','LTCUSDT','DASHUSDT','XRPUSDT','EOSUSDT','TUSDUSDT'], (error, response) => {
+	binance.websockets.prevDay(['BTCUSDT','ETHUSDT','LTCUSDT','DASHUSDT','XRPUSDT','EOSUSDT','TUSDUSDT','BCHABCUSDT'], (error, response) => {
 	  	
 	  	if (response.symbol == 'BTCUSDT')
 	  		data_update = {$set : {'btc_change': parseFloat(response.percentChange)}};
@@ -44,6 +44,8 @@ setTimeout(function() {
 	  		data_update = {$set : {'eos_change': parseFloat(response.percentChange)}};
 	  	if (response.symbol == 'TUSDUSDT')
 	  		data_update = {$set : {'usdt_change': parseFloat(response.percentChange)}};
+	  	if (response.symbol == 'BCHABCUSDT')
+	  		data_update = {$set : {'bch_change': parseFloat(response.percentChange)}};
 	  	Ticker.update({},data_update,(err,responses)=>{
 		})
 	});
@@ -64,7 +66,8 @@ setTimeout(function() {
 	  		data_update = {$set : {'eos_usd': parseFloat(trades.p)}};
 	  	if (trades.s == 'TUSDUSDT')
 	  		data_update = {$set : {'usdt_usd': parseFloat(trades.p)}};
-
+	  	if (trades.s == 'BCHABCUSDT')
+	  		data_update = {$set : {'bch_usd': parseFloat(trades.p)}};
 	  	Ticker.update({},data_update,(err,responses)=>{
 		})
 
