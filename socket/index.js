@@ -13,6 +13,8 @@ function onConnect(socket,io) {
 	});
 	
 	require('../models/ticker').infoSocket(socket, io);
+	require('../models/transaction').infoSocket(socket, io);
+	require('../controllers/socket').infoSocket(socket, io);
 }
 
 module.exports = function(io){
