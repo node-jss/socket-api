@@ -63,6 +63,10 @@ setTimeout(function() {
 	  		data_update = {$set : {'bch_change': parseFloat(response.percentChange)}};
 	  		Ticker.update({},data_update,(err,responses)=>{
 			})
+		if (response.symbol == 'DOGEUSDT')
+	  		data_update = {$set : {'doge_change': parseFloat(response.percentChange)}};
+	  		Ticker.update({},data_update,(err,responses)=>{
+			})
 
 	  	if (response.symbol == 'ETHBTC')
 		{
@@ -496,7 +500,7 @@ setTimeout(function() {
 
 	});
 
-	binance.websockets.trades(['BTCUSDT','ETHUSDT','LTCUSDT','DASHUSDT','XRPUSDT','EOSUSDT','TUSDUSDT','BCHABCUSDT'], (trades) => {
+	binance.websockets.trades(['DOGEUSDT', 'BTCUSDT','ETHUSDT','LTCUSDT','DASHUSDT','XRPUSDT','EOSUSDT','TUSDUSDT','BCHABCUSDT'], (trades) => {
 	  	//console.log("USD "+trades.s+" : "+trades.p);
 	  	if (trades.s == 'BTCUSDT')
 	  		data_update = {$set : {'btc_usd': parseFloat(trades.p)}};
@@ -514,6 +518,9 @@ setTimeout(function() {
 	  		data_update = {$set : {'usdt_usd': parseFloat(trades.p)}};
 	  	if (trades.s == 'BCHABCUSDT')
 	  		data_update = {$set : {'bch_usd': parseFloat(trades.p)}};
+	  	if (trades.s == 'DOGEUSDT')
+	  		data_update = {$set : {'doge_usd': parseFloat(trades.p)}};
+
 	  	Ticker.update({},data_update,(err,responses)=>{
 		})
 
