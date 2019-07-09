@@ -109,10 +109,10 @@ setTimeout(function() {
 		if (response.symbol == 'IOTABTC')
 		{
 			data_update = {$set : {
-				'btc.xlm.vol': parseFloat(response.quoteVolume),
-				'btc.xlm.price': parseFloat(response.bestAsk),
-				'btc.xlm.change': parseFloat(response.percentChange),
-				'btc.xlm.trade': parseFloat(response.numTrades),
+				'btc.iota.vol': parseFloat(response.quoteVolume),
+				'btc.iota.price': parseFloat(response.bestAsk),
+				'btc.iota.change': parseFloat(response.percentChange),
+				'btc.iota.trade': parseFloat(response.numTrades),
 			}};
 			Transaction.update({},data_update,(err,responses)=>{
 			})
@@ -123,10 +123,10 @@ setTimeout(function() {
 		if (response.symbol == 'NANOBTC')
 		{
 			data_update = {$set : {
-				'btc.xlm.vol': parseFloat(response.quoteVolume),
-				'btc.xlm.price': parseFloat(response.bestAsk),
-				'btc.xlm.change': parseFloat(response.percentChange),
-				'btc.xlm.trade': parseFloat(response.numTrades),
+				'btc.nano.vol': parseFloat(response.quoteVolume),
+				'btc.nano.price': parseFloat(response.bestAsk),
+				'btc.nano.change': parseFloat(response.percentChange),
+				'btc.nano.trade': parseFloat(response.numTrades),
 			}};
 			Transaction.update({},data_update,(err,responses)=>{
 			})
