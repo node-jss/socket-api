@@ -54,7 +54,7 @@
     "sendpulse-api": "^1.0.2",
     "sha1": "^1.1.1",
     "sleep": "^5.1.1",
-    "socket.io": "^2.0.4",
+    "socket.io": "^2.4.0",
     "speakeasy": "^2.0.0",
     "store": "^2.0.12",
     "url-slug": "^2.0.0",
